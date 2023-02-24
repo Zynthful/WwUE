@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}" SchemaVersion="103">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice">
+							<ObjectRef Name="System" ID="{DCA96374-A0F0-4F93-97CC-A31A51A1239B}" WorkUnitID="{7A4A59F7-96E1-4D5C-BC71-8D2483446FEE}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="SFX" ID="{F697F90E-0666-40DE-B90F-51A56718C677}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="15"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Voice" ID="{BBA84B8E-4620-4C6B-8337-354F315609A8}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="3"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Music" ID="{E1AD4AC5-1C01-4A02-8554-D60A93F9730C}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="13"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Ambience" ID="{BA72396B-D656-4978-899C-84C14AFE0216}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Ambisonics" ID="{A52A6707-163D-4556-AB0C-E3356CCDAA92}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<AuxBus Name="Auxiliary" ID="{1359C4D4-EAFD-4ABA-8C50-FE3628834AC0}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="8"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<AuxBus Name="Reverb" ID="{01E4C08D-3EC5-423B-9BB6-1EBF599411BC}">
+									<PropertyList>
+										<Property Name="UseGameAuxSends" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<AuxBus Name="Reverb_Small" ID="{F227EF68-C6CC-4757-8143-C4ED3A89A35E}">
+											<ObjectLists/>
+										</AuxBus>
+										<AuxBus Name="Reverb_Large" ID="{06170E8D-F313-42A1-AC76-49CA0AA2542C}">
+											<ObjectLists/>
+										</AuxBus>
+										<AuxBus Name="Reverb_Huge" ID="{75A69B40-1A1E-4FC0-917A-39FB0249DECD}">
+											<ObjectLists/>
+										</AuxBus>
+									</ChildrenList>
+									<ObjectLists/>
+								</AuxBus>
+							</ChildrenList>
+							<ObjectLists/>
+						</AuxBus>
+					</ChildrenList>
+					<ObjectLists/>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>

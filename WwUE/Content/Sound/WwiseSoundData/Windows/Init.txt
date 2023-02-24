@@ -1,0 +1,19 @@
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Master Audio Bus\Ambience	
+	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	2903397179	Ambisonics			\Default Work Unit\Master Audio Bus\Ambisonics	
+	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3991942870	Music			\Default Work Unit\Master Audio Bus\Music	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	348963605	Reverb			\Default Work Unit\Master Audio Bus\Auxiliary\Reverb	
+	362420037	Reverb_Huge			\Default Work Unit\Master Audio Bus\Auxiliary\Reverb\Reverb_Huge	
+	573298149	Reverb_Large			\Default Work Unit\Master Audio Bus\Auxiliary\Reverb\Reverb_Large	
+	933527613	Reverb_Small			\Default Work Unit\Master Audio Bus\Auxiliary\Reverb\Reverb_Small	
+	2396789687	Auxiliary			\Default Work Unit\Master Audio Bus\Auxiliary	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+

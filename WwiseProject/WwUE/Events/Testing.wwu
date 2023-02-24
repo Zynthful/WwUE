@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1928384E-7C28-408F-8DB8-BB674E593D13}" SchemaVersion="103" RootDocumentID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" ParentDocumentID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}">
+	<Events>
+		<WorkUnit Name="Testing" ID="{1928384E-7C28-408F-8DB8-BB674E593D13}" OwnerID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="26"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<WorkUnit Name="Testing_Beeps" ID="{1FA949A7-FE48-4E1A-8EDC-D83D49800763}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

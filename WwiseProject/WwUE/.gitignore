@@ -1,0 +1,11 @@
+# Wwise profiler sessions
+*.prof
+
+# Rebuilt from .wwu files (handles schema validation -> reduces project load times)
+*.validationcache
+
+# Rebuilt from Originals and Project
+.cache
+
+# Rebuilt from .wav files
+*.akd

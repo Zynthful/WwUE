@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2232761158	Play_test_beep_short			\Default Work Unit\Testing\Testing_Beeps\Play_test_beep_short	
+	2866913994	Play_test_beep_long			\Default Work Unit\Testing\Testing_Beeps\Play_test_beep_long	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	689952760	s_generic_beep_short_01	E:\Projects\WwiseUnrealTesting\WwiseProject\WwUE\.cache\Windows\SFX\Testing\Beeps\s_generic_beep_short_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Testing\Testing\Beeps\test_beep_short\s_generic_beep_short_01		192064
+	957341528	s_generic_beep_long_01	E:\Projects\WwiseUnrealTesting\WwiseProject\WwUE\.cache\Windows\SFX\Testing\Beeps\s_generic_beep_long_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Testing\Testing\Beeps\test_beep_long\s_generic_beep_long_01		192064
+

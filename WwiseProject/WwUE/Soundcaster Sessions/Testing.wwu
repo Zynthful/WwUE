@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{EC78AFFD-AE6D-4DDB-8110-8637C093D416}" SchemaVersion="103" RootDocumentID="{ED4E78C3-F20A-4C96-A852-6A24EE442AE2}" ParentDocumentID="{ED4E78C3-F20A-4C96-A852-6A24EE442AE2}">
+	<SoundcasterSessions>
+		<WorkUnit Name="Testing" ID="{EC78AFFD-AE6D-4DDB-8110-8637C093D416}" OwnerID="{ED4E78C3-F20A-4C96-A852-6A24EE442AE2}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="26"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<SoundcasterSession Name="Beeps" ID="{0FC91FBA-5779-4309-B2ED-9E1CCF2D256E}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_test_beep_short" ID="{B45F46D9-6240-48E4-A8A6-9155D28DEB76}" WorkUnitID="{1FA949A7-FE48-4E1A-8EDC-D83D49800763}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_test_beep_long" ID="{25FF2DB1-A899-4DEA-8530-131DE72C6312}" WorkUnitID="{1FA949A7-FE48-4E1A-8EDC-D83D49800763}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

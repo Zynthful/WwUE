@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1FA949A7-FE48-4E1A-8EDC-D83D49800763}" SchemaVersion="103" RootDocumentID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" ParentDocumentID="{1928384E-7C28-408F-8DB8-BB674E593D13}">
+	<Events>
+		<WorkUnit Name="Testing_Beeps" ID="{1FA949A7-FE48-4E1A-8EDC-D83D49800763}" OwnerID="{1928384E-7C28-408F-8DB8-BB674E593D13}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Play_test_beep_long" ID="{25FF2DB1-A899-4DEA-8530-131DE72C6312}">
+					<ChildrenList>
+						<Action Name="" ID="{EEAF1579-8523-4A22-AFC2-2443822FB2DD}" ShortID="205824695">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="test_beep_long" ID="{62214564-3E59-43D7-8316-48AA3E087326}" WorkUnitID="{94474BF9-93C2-4C83-A950-1E5488488D80}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_test_beep_short" ID="{B45F46D9-6240-48E4-A8A6-9155D28DEB76}">
+					<ChildrenList>
+						<Action Name="" ID="{87FF2CEB-BDE3-4472-BD9B-C45672BF2964}" ShortID="872650056">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="test_beep_short" ID="{B6A7D509-7248-43D8-B28F-F5DFB4E92C41}" WorkUnitID="{94474BF9-93C2-4C83-A950-1E5488488D80}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
