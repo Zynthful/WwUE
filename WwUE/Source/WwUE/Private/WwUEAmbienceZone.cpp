@@ -4,6 +4,7 @@
 #include "WwUEAmbienceZone.h"
 #include "../WwUECharacter.h"
 #include "WwUEAmbienceSoundSystem.h"
+#include "AkComponent.h"
 
 // Sets default values
 AWwUEAmbienceZone::AWwUEAmbienceZone()
@@ -11,6 +12,8 @@ AWwUEAmbienceZone::AWwUEAmbienceZone()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("Ak Component"));
+	AkComponent->AttachToComponent(RootComponent, FAttachmentTransformRules::KeepRelativeTransform);
 }
 
 // Called when the game starts or when spawned
@@ -21,6 +24,26 @@ void AWwUEAmbienceZone::BeginPlay()
 }
 
 void AWwUEAmbienceZone::OnActorEnter(AActor* Actor)
+{
+	ActorsInside.Add(Actor);
+
+	if (PlaySettings == EAmbiencePlaySettings::OnEnter)
+	{
+		OnTriggerPlay(Actor);
+	}
+}
+
+void AWwUEAmbienceZone::OnActorExit(AActor* Actor)
+{
+	ActorsInside.Remove(Actor);
+
+	if (StopSettings == EAmbienceStopSettings::OnExit)
+	{
+		OnTriggerStop(Actor);
+	}
+}
+
+void AWwUEAmbienceZone::OnTriggerPlay(AActor* Actor)
 {
 	if (AWwUECharacter* Character = Cast<AWwUECharacter>(Actor))
 	{
@@ -34,7 +57,7 @@ void AWwUEAmbienceZone::OnActorEnter(AActor* Actor)
 	}
 }
 
-void AWwUEAmbienceZone::OnActorExit(AActor* Actor)
+void AWwUEAmbienceZone::OnTriggerStop(AActor* Actor)
 {
 	if (AWwUECharacter* Character = Cast<AWwUECharacter>(Actor))
 	{
@@ -46,14 +69,6 @@ void AWwUEAmbienceZone::OnActorExit(AActor* Actor)
 			}
 		}
 	}
-}
-
-void AWwUEAmbienceZone::OnTriggerPlay(AActor* Actor)
-{
-}
-
-void AWwUEAmbienceZone::OnTriggerStop(AActor* Actor)
-{
 }
 
 // Called every frame

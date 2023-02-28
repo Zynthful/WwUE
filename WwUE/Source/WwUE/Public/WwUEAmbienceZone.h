@@ -6,7 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "WwUEAmbienceZone.generated.h"
 
+class AWwUECharacter;
 class UWwUEAmbienceZoneData;
+class UAkComponent;
 
 UENUM(BlueprintType)
 enum EAmbiencePlaySettings
@@ -55,6 +57,12 @@ public:
 	UWwUEAmbienceZoneData* GetAmbienceData();
 
 protected:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAkComponent* AkComponent;
+
+	UPROPERTY(Transient, BlueprintReadOnly)
+	TSet<AActor*> ActorsInside;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	UWwUEAmbienceZoneData* AmbienceData;
 
