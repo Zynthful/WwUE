@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{65083F70-AAD8-4277-A0E2-24BB6C8BBA3E}" SchemaVersion="103" RootDocumentID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" ParentDocumentID="{F8B9CCAE-2B0D-4626-8018-A6903D2E2D92}">
+	<Events>
+		<WorkUnit Name="Environment_Ambience" ID="{65083F70-AAD8-4277-A0E2-24BB6C8BBA3E}" OwnerID="{F8B9CCAE-2B0D-4626-8018-A6903D2E2D92}" PersistMode="Nested">
+			<ChildrenList>
+				<WorkUnit Name="Environment_Ambience_Beds" ID="{1E53C000-23DA-456B-95AF-3635986BF62E}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -10,6 +10,7 @@
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
 				</SoundBank>
+				<WorkUnit Name="Environment" ID="{135ACBE5-EA15-4B41-947D-283BABE23253}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundBanks>

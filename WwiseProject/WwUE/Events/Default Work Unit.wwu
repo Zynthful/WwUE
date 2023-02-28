@@ -4,6 +4,7 @@
 		<WorkUnit Name="Default Work Unit" ID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" PersistMode="Standalone">
 			<ChildrenList>
 				<WorkUnit Name="Testing" ID="{1928384E-7C28-408F-8DB8-BB674E593D13}" PersistMode="Reference"/>
+				<WorkUnit Name="Environment" ID="{F8B9CCAE-2B0D-4626-8018-A6903D2E2D92}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

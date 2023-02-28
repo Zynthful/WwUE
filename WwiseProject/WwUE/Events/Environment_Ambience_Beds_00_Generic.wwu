@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{58025A69-F22E-430F-A69C-75920140CB99}" SchemaVersion="103" RootDocumentID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" ParentDocumentID="{1E53C000-23DA-456B-95AF-3635986BF62E}">
+	<Events>
+		<WorkUnit Name="Environment_Ambience_Beds_00_Generic" ID="{58025A69-F22E-430F-A69C-75920140CB99}" OwnerID="{1E53C000-23DA-456B-95AF-3635986BF62E}" PersistMode="Nested">
+			<ChildrenList>
+				<Folder Name="Rain" ID="{6ACF9EB4-12D2-4F3D-8FC7-C7932AC6D4AF}" ShortID="759762667">
+					<ChildrenList>
+						<Event Name="Play_amb_beds_gen_rain_light_loop" ID="{120CDA9E-5148-4FD0-935C-A694ED128C69}">
+							<ChildrenList>
+								<Action Name="" ID="{462DE406-10FC-44C9-BE40-5E7B3491ABA4}" ShortID="510455141">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="env_amb_beds_gen_rain_light" ID="{1E8829EB-0F1C-4398-B53D-38C8D817019D}" WorkUnitID="{F907640B-9540-4859-A8C5-49A39C40402C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{5D401711-BBB4-42BC-A6A9-58D27421F6AA}" ShortID="877755924">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64" Value="50">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{87BD1B65-8B63-4F9E-AA61-2FB0F14E0909}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="env_amb_beds_gen_rain_light" ID="{1E8829EB-0F1C-4398-B53D-38C8D817019D}" WorkUnitID="{F907640B-9540-4859-A8C5-49A39C40402C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_amb_beds_gen_rain_moderate_loop" ID="{C26E5A71-C278-4172-AAD8-24379136BA93}">
+							<ChildrenList>
+								<Action Name="" ID="{D90DD6A3-2417-4B13-9B49-49DB7243CD91}" ShortID="100396542">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="env_amb_beds_gen_rain_moderate" ID="{F4B5407F-A6F8-4B41-8AEB-1AAD924AD6CB}" WorkUnitID="{F907640B-9540-4859-A8C5-49A39C40402C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{73ABFD0E-4A75-4A9E-B7D3-86AAF7D81C3A}" ShortID="213595094">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="36"/>
+										<Property Name="SeekPercent" Type="Real64" Value="50">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{DFCB3EC2-8160-48E9-A1D5-3EDF6FB14330}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="50"/>
+															<Property Name="Min" Type="Real64" Value="-50"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="env_amb_beds_gen_rain_moderate" ID="{F4B5407F-A6F8-4B41-8AEB-1AAD924AD6CB}" WorkUnitID="{F907640B-9540-4859-A8C5-49A39C40402C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_amb_beds_gen_rain_light_loop" ID="{F290363A-9AD7-42A3-8FF0-2C7A798042DF}">
+							<ChildrenList>
+								<Action Name="" ID="{9E60DD48-C214-41F7-AE64-69047AC9E5EA}" ShortID="395987754">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="env_amb_beds_gen_rain_light" ID="{1E8829EB-0F1C-4398-B53D-38C8D817019D}" WorkUnitID="{F907640B-9540-4859-A8C5-49A39C40402C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_amb_beds_gen_rain_moderate_loop" ID="{DA368500-E752-4B8A-BCCE-AACDBFD3D955}">
+							<ChildrenList>
+								<Action Name="" ID="{46F99851-7B1B-49D9-9333-E6299E67031D}" ShortID="915424260">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="env_amb_beds_gen_rain_moderate" ID="{F4B5407F-A6F8-4B41-8AEB-1AAD924AD6CB}" WorkUnitID="{F907640B-9540-4859-A8C5-49A39C40402C}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

@@ -4,6 +4,7 @@
 		<WorkUnit Name="Default Work Unit" ID="{ED4E78C3-F20A-4C96-A852-6A24EE442AE2}" PersistMode="Standalone">
 			<ChildrenList>
 				<WorkUnit Name="Testing" ID="{EC78AFFD-AE6D-4DDB-8110-8637C093D416}" PersistMode="Reference"/>
+				<WorkUnit Name="Environment" ID="{F31E6D94-25C3-4D78-998D-5FD987C00638}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

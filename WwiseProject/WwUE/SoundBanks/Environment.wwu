@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{135ACBE5-EA15-4B41-947D-283BABE23253}" SchemaVersion="103" RootDocumentID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}" ParentDocumentID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}">
+	<SoundBanks>
+		<WorkUnit Name="Environment" ID="{135ACBE5-EA15-4B41-947D-283BABE23253}" OwnerID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}" PersistMode="Nested">
+			<ChildrenList>
+				<WorkUnit Name="Environment_Ambience" ID="{A5300AC4-D31F-4CD4-B318-CCE1E5207EE7}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F907640B-9540-4859-A8C5-49A39C40402C}" SchemaVersion="103" RootDocumentID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}" ParentDocumentID="{B793BCF8-69E7-4F13-AB3E-6E1A31315B39}">
+	<AudioObjects>
+		<WorkUnit Name="Environment_Ambience_Beds" ID="{F907640B-9540-4859-A8C5-49A39C40402C}" OwnerID="{94D4A866-874F-4E42-A29F-7E5B8A0A39F6}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="env_amb_beds" ID="{B1F15D97-AEE3-4063-BFC6-E0FD1FAEB501}" ShortID="954818583">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="env_amb_beds_00_generic" ID="{9E00319C-D32B-44F8-B499-8D43C8BB7E44}" ShortID="271264767">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<ActorMixer Name="env_amb_beds_gen_rain" ID="{0E07DD38-C760-4900-9411-BFBEC1C76FE8}" ShortID="790595631">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="env_amb_beds_gen_rain_light" ID="{1E8829EB-0F1C-4398-B53D-38C8D817019D}" ShortID="343911623">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="RAIN_InsJ_Ambience_Rain_Light_01_LOOP" ID="{15AD54F7-4543-471F-AA0B-CAD924F9371F}" ShortID="461750996">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="RAIN_InsJ_Ambience_Rain_Light_01_LOOP" ID="{2A2BF05E-C1B3-4A81-A95D-7E0664203433}">
+															<Language>SFX</Language>
+															<AudioFile>Environment\Ambience\Beds\Generic\Rain\RAIN_InsJ_Ambience_Rain_Light_01_LOOP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="391963173"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="RAIN_InsJ_Ambience_Rain_Light_01_LOOP" ID="{2A2BF05E-C1B3-4A81-A95D-7E0664203433}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="env_amb_beds_gen_rain_moderate" ID="{F4B5407F-A6F8-4B41-8AEB-1AAD924AD6CB}" ShortID="670585862">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="RAIN_InsJ_Ambience_Rain_Moderate_01_LOOP" ID="{1E8CDBF3-2E9D-4C08-8984-949504989C6F}" ShortID="827162820">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="RAIN_InsJ_Ambience_Rain_Moderate_01_LOOP" ID="{E7D6B625-6E01-47B7-98AA-1B3F61B605A1}">
+															<Language>SFX</Language>
+															<AudioFile>Environment\Ambience\Beds\Generic\Rain\RAIN_InsJ_Ambience_Rain_Moderate_01_LOOP.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="976742805"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists/>
+													<ActiveSourceList>
+														<ActiveSource Name="RAIN_InsJ_Ambience_Rain_Moderate_01_LOOP" ID="{E7D6B625-6E01-47B7-98AA-1B3F61B605A1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<ObjectLists/>
+										</RandomSequenceContainer>
+									</ChildrenList>
+									<ObjectLists/>
+								</ActorMixer>
+							</ChildrenList>
+							<ObjectLists/>
+						</ActorMixer>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

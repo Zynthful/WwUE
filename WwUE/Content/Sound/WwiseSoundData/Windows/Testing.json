@@ -5,11 +5,11 @@
   "SchemaVersion": "12",
   "SoundbankVersion": "140",
   "RootPaths": {
-   "ProjectRoot": "E:\\Projects\\WwiseUnrealTesting\\WwiseProject\\WwUE\\",
-   "SourceFilesRoot": "E:\\Projects\\WwiseUnrealTesting\\WwiseProject\\WwUE\\.cache\\Windows\\",
-   "SoundBanksRoot": "E:\\Projects\\WwiseUnrealTesting\\WwUE\\Content\\Sound\\WwiseSoundData\\Windows\\",
+   "ProjectRoot": "E:\\Projects\\WwUE\\WwiseProject\\WwUE\\",
+   "SourceFilesRoot": "E:\\Projects\\WwUE\\WwiseProject\\WwUE\\.cache\\Windows\\",
+   "SoundBanksRoot": "E:\\Projects\\WwUE\\WwUE\\Content\\Sound\\WwiseSoundData\\Windows\\",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "E:\\Projects\\WwiseUnrealTesting\\WwiseProject\\WwUE\\GeneratedSoundBanks\\Windows"
+   "ExternalSourcesOutputRoot": "E:\\Projects\\WwUE\\WwiseProject\\WwUE\\GeneratedSoundBanks\\Windows"
   },
   "SoundBanks": [
    {

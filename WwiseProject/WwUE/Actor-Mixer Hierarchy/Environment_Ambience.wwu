@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B793BCF8-69E7-4F13-AB3E-6E1A31315B39}" SchemaVersion="103" RootDocumentID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}" ParentDocumentID="{D2421FA8-C666-42D5-986B-20901B1C6564}">
+	<AudioObjects>
+		<WorkUnit Name="Environment_Ambience" ID="{B793BCF8-69E7-4F13-AB3E-6E1A31315B39}" OwnerID="{300222B7-2C9F-4E79-9A77-D74B1DAD5649}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="env_amb_main" ID="{94D4A866-874F-4E42-A29F-7E5B8A0A39F6}" ShortID="130118751">
+					<PropertyList>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambience" ID="{BA72396B-D656-4978-899C-84C14AFE0216}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="Environment_Ambience_Beds" ID="{F907640B-9540-4859-A8C5-49A39C40402C}" PersistMode="Reference"/>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

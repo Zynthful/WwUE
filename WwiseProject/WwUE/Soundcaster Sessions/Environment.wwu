@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F31E6D94-25C3-4D78-998D-5FD987C00638}" SchemaVersion="103" RootDocumentID="{ED4E78C3-F20A-4C96-A852-6A24EE442AE2}" ParentDocumentID="{ED4E78C3-F20A-4C96-A852-6A24EE442AE2}">
+	<SoundcasterSessions>
+		<WorkUnit Name="Environment" ID="{F31E6D94-25C3-4D78-998D-5FD987C00638}" OwnerID="{ED4E78C3-F20A-4C96-A852-6A24EE442AE2}" PersistMode="Nested">
+			<ChildrenList>
+				<SoundcasterSession Name="Environment" ID="{D01B9A31-2576-4D70-BCC2-5AF23012663B}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_amb_beds_gen_rain_light_loop" ID="{120CDA9E-5148-4FD0-935C-A694ED128C69}" WorkUnitID="{58025A69-F22E-430F-A69C-75920140CB99}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_amb_beds_gen_rain_light_loop" ID="{F290363A-9AD7-42A3-8FF0-2C7A798042DF}" WorkUnitID="{58025A69-F22E-430F-A69C-75920140CB99}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_amb_beds_gen_rain_moderate_loop" ID="{C26E5A71-C278-4172-AAD8-24379136BA93}" WorkUnitID="{58025A69-F22E-430F-A69C-75920140CB99}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_amb_beds_gen_rain_moderate_loop" ID="{DA368500-E752-4B8A-BCCE-AACDBFD3D955}" WorkUnitID="{58025A69-F22E-430F-A69C-75920140CB99}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>
