@@ -38,16 +38,16 @@ protected:
 	virtual void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
-	void OnActorEnter(AActor* Actor);
+	virtual void OnActorEnter(AActor* Actor);
 
 	UFUNCTION(BlueprintCallable)
-	void OnActorExit(AActor* Actor);
+	virtual void OnActorExit(AActor* Actor);
 
 	UFUNCTION(BlueprintCallable)
-	void OnTriggerPlay(AActor* Actor);
+	virtual void OnTriggerPlay(AActor* Actor);
 
 	UFUNCTION(BlueprintCallable)
-	void OnTriggerStop(AActor* Actor);
+	virtual void OnTriggerStop(AActor* Actor);
 
 public:	
 	// Called every frame
