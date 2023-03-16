@@ -63,9 +63,9 @@ void UWwUEAmbienceSoundSystem::SetAmbience(AWwUEAmbienceZone* Zone)
 	{
 		if (UWwUEAmbienceZoneData* OldZoneData = CurrentAmbienceZone->GetAmbienceData())
 		{
-			for (UAkAudioEvent* StopEvent : OldZoneData->StopSoundBed.Events)
+			for (FAmbienceSoundBed Bed : OldZoneData->Beds)
 			{
-				UAkGameplayStatics::PostEvent(StopEvent, CurrentAmbienceZone, 0, FOnAkPostEventCallback());
+				UAkGameplayStatics::PostEvent(Bed.StopAkEvent, CurrentAmbienceZone, 0, FOnAkPostEventCallback());
 			}
 		}
 	}
@@ -73,9 +73,9 @@ void UWwUEAmbienceSoundSystem::SetAmbience(AWwUEAmbienceZone* Zone)
 	// Play new ambience
 	if (UWwUEAmbienceZoneData* NewZoneData = Zone->GetAmbienceData())
 	{
-		for (UAkAudioEvent* PlayEvent : NewZoneData->PlaySoundBed.Events)
+		for (FAmbienceSoundBed Bed : NewZoneData->Beds)
 		{
-			UAkGameplayStatics::PostEvent(PlayEvent, Zone, 0, FOnAkPostEventCallback());
+			UAkGameplayStatics::PostEvent(Bed.PlayAkEvent, CurrentAmbienceZone, 0, FOnAkPostEventCallback());
 		}
 	}
 
@@ -91,9 +91,9 @@ void UWwUEAmbienceSoundSystem::ClearAmbience()
 
 	if (UWwUEAmbienceZoneData* OldZoneData = CurrentAmbienceZone->GetAmbienceData())
 	{
-		for (UAkAudioEvent* StopEvent : OldZoneData->StopSoundBed.Events)
+		for (FAmbienceSoundBed Bed : OldZoneData->Beds)
 		{
-			UAkGameplayStatics::PostEvent(StopEvent, CurrentAmbienceZone, 0, FOnAkPostEventCallback());
+			UAkGameplayStatics::PostEvent(Bed.StopAkEvent, CurrentAmbienceZone, 0, FOnAkPostEventCallback());
 		}
 	}
 

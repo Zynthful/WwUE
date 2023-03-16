@@ -14,7 +14,10 @@ struct FAmbienceSoundBed
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	TArray<UAkAudioEvent*> Events;
+	UAkAudioEvent* PlayAkEvent;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UAkAudioEvent* StopAkEvent;
 };
 
 /**
@@ -27,8 +30,5 @@ class WWUE_API UWwUEAmbienceZoneData : public UDataAsset
 	
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FAmbienceSoundBed PlaySoundBed;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FAmbienceSoundBed StopSoundBed;
+	TArray<FAmbienceSoundBed> Beds;
 };

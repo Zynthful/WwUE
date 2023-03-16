@@ -6,7 +6,6 @@
 #include "GameFramework/Actor.h"
 #include "WwUEAmbienceZone.generated.h"
 
-class AWwUECharacter;
 class UWwUEAmbienceZoneData;
 class UAkComponent;
 
