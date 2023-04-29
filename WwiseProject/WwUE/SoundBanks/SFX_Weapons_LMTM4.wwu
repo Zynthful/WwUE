@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{21590B82-7CD6-4F8C-9D9C-D632678A4EA8}" SchemaVersion="103" RootDocumentID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}" ParentDocumentID="{C669E56F-04B9-4F16-B3FC-C086AD3ACDB3}">
+	<SoundBanks>
+		<WorkUnit Name="SFX_Weapons_LMTM4" ID="{21590B82-7CD6-4F8C-9D9C-D632678A4EA8}" OwnerID="{C669E56F-04B9-4F16-B3FC-C086AD3ACDB3}" PersistMode="Nested">
+			<ChildrenList>
+				<SoundBank Name="SFXWeaponsLMTM4" ID="{AF60BC58-8B45-4EE1-B35A-51305672B003}">
+					<ObjectInclusionList>
+						<ObjectRef Name="SFX_Weapons_LMTM4" ID="{9C23A427-B0A4-455F-ACA1-0026F27BAA23}" WorkUnitID="{9C23A427-B0A4-455F-ACA1-0026F27BAA23}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

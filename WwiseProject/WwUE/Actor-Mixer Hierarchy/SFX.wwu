@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9CBD0CCC-3C57-4D05-9B22-5B18D837F6E2}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="SFX" ID="{9CBD0CCC-3C57-4D05-9B22-5B18D837F6E2}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="sfx_main" ID="{706061EA-1194-4EA1-B2F5-3C0DDB480214}" ShortID="456359808">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX" ID="{F697F90E-0666-40DE-B90F-51A56718C677}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<WorkUnit Name="SFX_Weapons" ID="{E76E0A94-D419-4AE7-9241-A2F130344868}" PersistMode="Reference"/>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

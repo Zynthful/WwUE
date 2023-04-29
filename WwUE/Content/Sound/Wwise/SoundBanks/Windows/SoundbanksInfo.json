@@ -19,7 +19,7 @@
     "Id": "1355168291",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "2597346347",
+    "Hash": "1010723120",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -68,7 +68,7 @@
      {
       "Id": "2866913994",
       "Name": "Play_test_beep_long",
-      "ObjectPath": "\\Events\\Default Work Unit\\Testing\\Testing_Beeps\\Play_test_beep_long",
+      "ObjectPath": "\\Events\\Testing\\Testing_Beeps\\Play_test_beep_long",
       "GUID": "{25FF2DB1-A899-4DEA-8530-131DE72C6312}",
       "DurationType": "OneShot",
       "DurationMin": "2.",
@@ -85,7 +85,7 @@
      {
       "Id": "2232761158",
       "Name": "Play_test_beep_short",
-      "ObjectPath": "\\Events\\Default Work Unit\\Testing\\Testing_Beeps\\Play_test_beep_short",
+      "ObjectPath": "\\Events\\Testing\\Testing_Beeps\\Play_test_beep_short",
       "GUID": "{B45F46D9-6240-48E4-A8A6-9155D28DEB76}",
       "DurationType": "OneShot",
       "DurationMin": "2.",
@@ -105,7 +105,7 @@
     "Id": "2167721767",
     "GUID": "{5E297027-7D74-4778-A7F4-E259ABAB7425}",
     "Language": "SFX",
-    "Hash": "3133349854",
+    "Hash": "3760753247",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic",
     "ShortName": "Environment_Ambience_Beds_00_Generic",
     "Path": "Environment_Ambience_Beds_00_Generic.bnk",
@@ -113,7 +113,7 @@
      {
       "Id": "3279544211",
       "Name": "Play_amb_beds_gen_rain_light_loop",
-      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Play_amb_beds_gen_rain_light_loop",
+      "ObjectPath": "\\Events\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Play_amb_beds_gen_rain_light_loop",
       "GUID": "{120CDA9E-5148-4FD0-935C-A694ED128C69}",
       "DurationType": "Infinite",
       "IncludedMemoryFiles": [
@@ -128,7 +128,7 @@
      {
       "Id": "871266710",
       "Name": "Play_amb_beds_gen_rain_moderate_loop",
-      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Play_amb_beds_gen_rain_moderate_loop",
+      "ObjectPath": "\\Events\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Play_amb_beds_gen_rain_moderate_loop",
       "GUID": "{C26E5A71-C278-4172-AAD8-24379136BA93}",
       "DurationType": "Infinite",
       "IncludedMemoryFiles": [
@@ -143,7 +143,7 @@
      {
       "Id": "4083200837",
       "Name": "Stop_amb_beds_gen_rain_light_loop",
-      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Stop_amb_beds_gen_rain_light_loop",
+      "ObjectPath": "\\Events\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Stop_amb_beds_gen_rain_light_loop",
       "GUID": "{F290363A-9AD7-42A3-8FF0-2C7A798042DF}",
       "MaxAttenuation": "0.",
       "DurationType": "OneShot",
@@ -153,9 +153,181 @@
      {
       "Id": "238368144",
       "Name": "Stop_amb_beds_gen_rain_moderate_loop",
-      "ObjectPath": "\\Events\\Default Work Unit\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Stop_amb_beds_gen_rain_moderate_loop",
+      "ObjectPath": "\\Events\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic\\Rain\\Stop_amb_beds_gen_rain_moderate_loop",
       "GUID": "{DA368500-E752-4B8A-BCCE-AACDBFD3D955}",
       "MaxAttenuation": "0.",
+      "DurationType": "OneShot",
+      "DurationMin": "0.",
+      "DurationMax": "0."
+     }
+    ]
+   },
+   {
+    "Id": "3645460479",
+    "GUID": "{AF60BC58-8B45-4EE1-B35A-51305672B003}",
+    "Language": "SFX",
+    "Hash": "3204271731",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX\\SFX_Weapons\\SFX_Weapons_LMTM4\\SFXWeaponsLMTM4",
+    "ShortName": "SFXWeaponsLMTM4",
+    "Path": "SFXWeaponsLMTM4.bnk",
+    "IncludedEvents": [
+     {
+      "Id": "4032663141",
+      "Name": "Play_wpn_lmtm4_fire_auto",
+      "ObjectPath": "\\Events\\SFX\\SFX_Weapons\\SFX_Weapons_LMTM4\\Play_wpn_lmtm4_fire_auto",
+      "GUID": "{FFB895C1-A669-41F5-8062-39B86EFB5F38}",
+      "DurationType": "Infinite",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "174478270",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_06.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_06_10C4C929.wem"
+       },
+       {
+        "Id": "182539067",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_02.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_02_10C4C929.wem"
+       },
+       {
+        "Id": "202970682",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_04.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_04_10C4C929.wem"
+       },
+       {
+        "Id": "261215696",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_09.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_09_10C4C929.wem"
+       },
+       {
+        "Id": "372933229",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_03.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_03_10C4C929.wem"
+       },
+       {
+        "Id": "597414878",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_07.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_07_10C4C929.wem"
+       },
+       {
+        "Id": "831467842",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_08.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_08_10C4C929.wem"
+       },
+       {
+        "Id": "977892659",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_10.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_10_10C4C929.wem"
+       },
+       {
+        "Id": "1007421288",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_01.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_01_10C4C929.wem"
+       },
+       {
+        "Id": "1022900570",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_11.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_11_10C4C929.wem"
+       },
+       {
+        "Id": "1036641685",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_05.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_05_10C4C929.wem"
+       }
+      ]
+     },
+     {
+      "Id": "4065970732",
+      "Name": "Play_wpn_lmtm4_fire_single",
+      "ObjectPath": "\\Events\\SFX\\SFX_Weapons\\SFX_Weapons_LMTM4\\Play_wpn_lmtm4_fire_single",
+      "GUID": "{68BA51A7-3179-4DEC-AF59-FDA61668CC62}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.",
+      "DurationMax": "6.000005",
+      "IncludedMemoryFiles": [
+       {
+        "Id": "174478270",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_06.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_06_10C4C929.wem"
+       },
+       {
+        "Id": "182539067",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_02.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_02_10C4C929.wem"
+       },
+       {
+        "Id": "202970682",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_04.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_04_10C4C929.wem"
+       },
+       {
+        "Id": "261215696",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_09.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_09_10C4C929.wem"
+       },
+       {
+        "Id": "372933229",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_03.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_03_10C4C929.wem"
+       },
+       {
+        "Id": "597414878",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_07.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_07_10C4C929.wem"
+       },
+       {
+        "Id": "831467842",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_08.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_08_10C4C929.wem"
+       },
+       {
+        "Id": "977892659",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_10.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_10_10C4C929.wem"
+       },
+       {
+        "Id": "1007421288",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_01.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_01_10C4C929.wem"
+       },
+       {
+        "Id": "1022900570",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_11.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_11_10C4C929.wem"
+       },
+       {
+        "Id": "1036641685",
+        "Language": "SFX",
+        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_05.wav",
+        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_05_10C4C929.wem"
+       }
+      ]
+     },
+     {
+      "Id": "4075792862",
+      "Name": "Play_wpn_lmtm4_fire_tail",
+      "ObjectPath": "\\Events\\SFX\\SFX_Weapons\\SFX_Weapons_LMTM4\\Play_wpn_lmtm4_fire_tail",
+      "GUID": "{07BB7AB8-09A3-4B89-AAED-0E0A472A06BB}",
       "DurationType": "OneShot",
       "DurationMin": "0.",
       "DurationMax": "0."

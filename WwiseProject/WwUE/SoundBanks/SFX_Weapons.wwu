@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C669E56F-04B9-4F16-B3FC-C086AD3ACDB3}" SchemaVersion="103" RootDocumentID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}" ParentDocumentID="{FD662984-E7D6-495F-8C83-A9AA228C6916}">
+	<SoundBanks>
+		<WorkUnit Name="SFX_Weapons" ID="{C669E56F-04B9-4F16-B3FC-C086AD3ACDB3}" OwnerID="{FD662984-E7D6-495F-8C83-A9AA228C6916}" PersistMode="Nested">
+			<ChildrenList>
+				<WorkUnit Name="SFX_Weapons_LMTM4" ID="{21590B82-7CD6-4F8C-9D9C-D632678A4EA8}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

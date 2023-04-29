@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2710BD97-D14F-4C76-8CF8-523E2201A5F5}" SchemaVersion="103" RootDocumentID="{1508B8BB-BA6C-4BD9-B43E-729989855550}" ParentDocumentID="{1508B8BB-BA6C-4BD9-B43E-729989855550}">
+	<InteractiveMusic>
+		<WorkUnit Name="SFX_Weapons" ID="{2710BD97-D14F-4C76-8CF8-523E2201A5F5}" OwnerID="{1508B8BB-BA6C-4BD9-B43E-729989855550}" PersistMode="Nested">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="wpn_fire" ID="{05EA5A99-4F16-48F2-9E19-260616E0AFEE}" ShortID="315681202">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+						</Reference>
+						<Reference Name="MidiTarget">
+							<ObjectRef Name="s_weapons_lmtm4_fire_single" ID="{B836133A-EF5E-42DF-A1CB-A0518BE65370}" WorkUnitID="{A2ED2FBA-BB71-4F2F-8B01-CC0E6C514191}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="wpn_fire" ID="{D1381F63-6982-42B0-BC64-10A4051A5900}" ShortID="227502347">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="wpn_fire_01" ID="{092C3C5B-7381-4B78-B15F-66C670DF5D85}" ShortID="650735783">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MidiFileSource Name="mid" ID="{33E08CB6-EEDA-4F9B-8E03-00551A67677E}" ShortID="1044625083">
+											<Language>SFX</Language>
+											<MidiFile>mid.MID</MidiFile>
+											<MediaIDList>
+												<MediaID ID="1044625083"/>
+											</MediaIDList>
+										</MidiFileSource>
+									</ChildrenList>
+									<TransitionList>
+										<MusicTransition Name="Root" ID="{472CCB54-ED19-474C-AD00-D2A86125D1E4}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</TransitionList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{DC556400-A947-4B89-AB26-7B7CF5ECE44B}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClipMidi Name="mid" ID="{44A0B9F8-5DEF-4F1F-B156-46D57EE15CA3}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="125.000000000003"/>
+																			</PropertyList>
+																			<MidiSourceRef Name="mid" ID="{33E08CB6-EEDA-4F9B-8E03-00551A67677E}"/>
+																		</MusicClipMidi>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{822EA2D0-9AAE-4CD0-BD10-1F04812EB63B}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{1AFABDDA-B474-49DD-B775-63CA2A5F916F}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="1000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+					<TransitionList>
+						<MusicTransition Name="Root" ID="{995EFF9F-A581-4C50-B76D-0F2475720A8B}">
+							<PropertyList>
+								<Property Name="IsFolder" Type="bool" Value="True"/>
+							</PropertyList>
+							<ChildrenList>
+								<MusicTransition Name="Transition" ID="{61BC7768-9DD6-4DCB-A799-61EF109968E6}">
+									<TransitionInfo/>
+								</MusicTransition>
+							</ChildrenList>
+							<TransitionInfo/>
+						</MusicTransition>
+					</TransitionList>
+					<ObjectLists/>
+					<Playlist>
+						<MusicPlaylistItem Name="" ID="{5F5D0612-CCE7-455E-964B-2FC4DFB68162}" ShortID="557521046">
+							<ChildrenList>
+								<MusicPlaylistItem Name="" ID="{E5406044-B2D4-4C58-A648-3C94B7C073E5}" ShortID="1003268197">
+									<PropertyList>
+										<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+									</PropertyList>
+									<SegmentRef Name="wpn_fire" ID="{D1381F63-6982-42B0-BC64-10A4051A5900}"/>
+								</MusicPlaylistItem>
+							</ChildrenList>
+						</MusicPlaylistItem>
+					</Playlist>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

@@ -1,13 +1,17 @@
 // gaming
-
-
 #include "WwUEWwise.h"
-#include "AkGameplayStatics.h"
 #include "AkComponent.h"
+#include "AkGameplayStatics.h"
+//#include "../Content/Sound/Wwise//SoundBanks/Common/Wwise_IDs.h"
+#include <AK/SoundEngine/Common/AkSoundEngine.h>
+#include "AkAudioEvent.h"
 
 DEFINE_LOG_CATEGORY(LogSound);
+DEFINE_LOG_CATEGORY(LogMIDI);
 
-int32 UWwUEWwise::PostEvent(UAkAudioEvent* AkEvent, AActor* Actor, bool bStopWhenAttachedToDestroyed)
+PRAGMA_DISABLE_OPTIMIZATION
+
+AkPlayingID UWwUEWwise::Play(UAkAudioEvent* AkEvent, AActor* Actor, bool bStopWhenAttachedToDestroyed)
 {
 	if (AkEvent == nullptr)
 	{
@@ -25,7 +29,7 @@ int32 UWwUEWwise::PostEvent(UAkAudioEvent* AkEvent, AActor* Actor, bool bStopWhe
 	return UAkGameplayStatics::PostEvent(AkEvent, Actor, 0, NullCallback, bStopWhenAttachedToDestroyed);
 }
 
-int32 UWwUEWwise::PostEventOnComponent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, bool bStopWhenAttachedToDestroyed)
+AkPlayingID UWwUEWwise::Play(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, bool bStopWhenAttachedToDestroyed)
 {
 	if (AkEvent == nullptr)
 	{
@@ -43,7 +47,19 @@ int32 UWwUEWwise::PostEventOnComponent(UAkAudioEvent* AkEvent, UAkComponent* AkC
 	return AkComponent->PostAkEvent(AkEvent, 0, NullCallback, TEXT(""));
 }
 
-bool UWwUEWwise::SetActorRTPCValue(AActor* Actor, FName RTPCName, float Value, int32 InterpolationTimeMs)
+AkPlayingID UWwUEWwise::PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, FMIDIEvent MIDIEvent, AkPlayingID PlayingID, bool bAbsoluteOffsets)
+{
+	TArray<FMIDIEvent> MIDIEvents;
+	MIDIEvents.Emplace(MIDIEvent);
+	return PostMIDIOnEvent(AkEvent, AkComponent, MIDIEvents, PlayingID, bAbsoluteOffsets);
+}
+
+AkPlayingID UWwUEWwise::PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, TArray<FMIDIEvent>& MIDIEvents, AkPlayingID PlayingID, bool bAbsoluteOffsets)
+{
+	return UAkMIDIGameplayStatics::PostMIDIOnEvent(AkEvent, AkComponent, MIDIEvents, PlayingID, bAbsoluteOffsets);
+}
+
+bool UWwUEWwise::SetRTPCValue(AActor* Actor, FName RTPCName, float Value, int32 InterpolationTimeMs)
 {
 	if (Actor == nullptr)
 	{
@@ -55,7 +71,7 @@ bool UWwUEWwise::SetActorRTPCValue(AActor* Actor, FName RTPCName, float Value, i
 	return true;
 }
 
-bool UWwUEWwise::SetAkComponentRTPCValue(UAkComponent* AkComponent, FString RTPCName, float Value, int32 InterpolationTimeMs)
+bool UWwUEWwise::SetRTPCValue(UAkComponent* AkComponent, FString RTPCName, float Value, int32 InterpolationTimeMs)
 {
 	if (AkComponent == nullptr)
 	{
@@ -67,13 +83,13 @@ bool UWwUEWwise::SetAkComponentRTPCValue(UAkComponent* AkComponent, FString RTPC
 	return true;
 }
 
-bool UWwUEWwise::SetGlobalRTPCValue(FName RTPCName, float Value, int32 InterpolationTimeMs)
+bool UWwUEWwise::SetRTPCValue(FName RTPCName, float Value, int32 InterpolationTimeMs)
 {
 	UAkGameplayStatics::SetRTPCValue(nullptr, Value, InterpolationTimeMs, nullptr, RTPCName);
 	return true;
 }
 
-bool UWwUEWwise::SetActorSwitch(AActor* Actor, FName SwitchGroupName, FName SwitchStateName)
+bool UWwUEWwise::SetSwitch(AActor* Actor, FName SwitchGroupName, FName SwitchStateName)
 {
 	if (Actor == nullptr)
 	{
@@ -85,11 +101,11 @@ bool UWwUEWwise::SetActorSwitch(AActor* Actor, FName SwitchGroupName, FName Swit
 	return true;
 }
 
-bool UWwUEWwise::SetAkComponentSwitch(UAkComponent* AkComponent, FString SwitchGroupName, FString SwitchStateName)
+bool UWwUEWwise::SetSwitch(UAkComponent* AkComponent, FString SwitchGroupName, FString SwitchStateName)
 {
 	if (AkComponent == nullptr)
 	{
-		UE_LOG(LogSound, Error, TEXT("SetAkComponentRTPCValue failed | AkComponent = nullptr"));
+		UE_LOG(LogSound, Error, TEXT("SetAkComponentRTPCValue failed | AkComponent was nullptr"));
 		return false;
 	}
 
@@ -102,3 +118,5 @@ bool UWwUEWwise::SetState(FName StateGroupName, FName StateName)
 	UAkGameplayStatics::SetState(nullptr, StateGroupName, StateName);
 	return true;
 }
+
+PRAGMA_ENABLE_OPTIMIZATION

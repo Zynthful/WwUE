@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{F8B9CCAE-2B0D-4626-8018-A6903D2E2D92}" SchemaVersion="103" RootDocumentID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" ParentDocumentID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}">
+<WwiseDocument Type="WorkUnit" ID="{F8B9CCAE-2B0D-4626-8018-A6903D2E2D92}" SchemaVersion="103">
 	<Events>
-		<WorkUnit Name="Environment" ID="{F8B9CCAE-2B0D-4626-8018-A6903D2E2D92}" OwnerID="{8342D274-B9B7-4F6C-B25C-C6372A6EC694}" PersistMode="Nested">
+		<WorkUnit Name="Environment" ID="{F8B9CCAE-2B0D-4626-8018-A6903D2E2D92}" PersistMode="Standalone">
 			<ChildrenList>
 				<WorkUnit Name="Environment_Ambience" ID="{65083F70-AAD8-4277-A0E2-24BB6C8BBA3E}" PersistMode="Reference"/>
 			</ChildrenList>

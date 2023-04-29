@@ -188,6 +188,16 @@ namespace FAkAudioDevice_Helpers
 	}
 }
 
+void PreProcessMessageQueueForRenderCallback(AK::IAkGlobalPluginContext* in_pContext, AkGlobalCallbackLocation in_eLocation, void* in_pCookie)
+{
+	FAkAudioDevice* Device = FAkAudioDevice::Get();
+
+	if (Device != nullptr)
+	{
+		Device->OnMessageWaitToSend.ExecuteIfBound((AkAudioSettings*)in_pCookie);
+	}
+}
+
 /*------------------------------------------------------------------------------------
 	Implementation
 ------------------------------------------------------------------------------------*/
@@ -527,6 +537,12 @@ bool FAkAudioDevice::Init()
 		FEditorDelegates::OnSwitchBeginPIEAndSIE.AddRaw(this, &FAkAudioDevice::OnSwitchBeginPIEAndSIE);
 	}
 #endif
+
+	// Register PreProcessMessageQueueForRender callback for use with syncing rendering MIDI events
+	AkAudioSettings AudioSettings;
+	AK::SoundEngine::GetAudioSettings(AudioSettings);
+	AK::SoundEngine::RegisterGlobalCallback(PreProcessMessageQueueForRenderCallback, AkGlobalCallbackLocation_PreProcessMessageQueueForRender, &AudioSettings);
+
 	UE_LOG(LogInit, Log, TEXT("Audiokinetic Audio Device initialized."));
 
 	return 1;

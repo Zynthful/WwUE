@@ -8,12 +8,12 @@
 		<ExternalSourcesOutputRoot>E:\Projects\WwUE\WwiseProject\WwUE\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="2167721767" GUID="{5E297027-7D74-4778-A7F4-E259ABAB7425}" Language="SFX" Hash="3133349854">
+		<SoundBank Id="2167721767" GUID="{5E297027-7D74-4778-A7F4-E259ABAB7425}" Language="SFX" Hash="3760753247">
 			<ObjectPath>\SoundBanks\Default Work Unit\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic</ObjectPath>
 			<ShortName>Environment_Ambience_Beds_00_Generic</ShortName>
 			<Path>Environment_Ambience_Beds_00_Generic.bnk</Path>
 			<IncludedEvents>
-				<Event Id="3279544211" Name="Play_amb_beds_gen_rain_light_loop" ObjectPath="\Events\Default Work Unit\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Play_amb_beds_gen_rain_light_loop" GUID="{120CDA9E-5148-4FD0-935C-A694ED128C69}" DurationType="Infinite">
+				<Event Id="3279544211" Name="Play_amb_beds_gen_rain_light_loop" ObjectPath="\Events\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Play_amb_beds_gen_rain_light_loop" GUID="{120CDA9E-5148-4FD0-935C-A694ED128C69}" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="391963173" Language="SFX">
 							<ShortName>Environment\Ambience\Beds\Generic\Rain\RAIN_InsJ_Ambience_Rain_Light_01_LOOP.wav</ShortName>
@@ -21,7 +21,7 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="871266710" Name="Play_amb_beds_gen_rain_moderate_loop" ObjectPath="\Events\Default Work Unit\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Play_amb_beds_gen_rain_moderate_loop" GUID="{C26E5A71-C278-4172-AAD8-24379136BA93}" DurationType="Infinite">
+				<Event Id="871266710" Name="Play_amb_beds_gen_rain_moderate_loop" ObjectPath="\Events\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Play_amb_beds_gen_rain_moderate_loop" GUID="{C26E5A71-C278-4172-AAD8-24379136BA93}" DurationType="Infinite">
 					<IncludedMemoryFiles>
 						<File Id="976742805" Language="SFX">
 							<ShortName>Environment\Ambience\Beds\Generic\Rain\RAIN_InsJ_Ambience_Rain_Moderate_01_LOOP.wav</ShortName>
@@ -29,8 +29,8 @@
 						</File>
 					</IncludedMemoryFiles>
 				</Event>
-				<Event Id="4083200837" Name="Stop_amb_beds_gen_rain_light_loop" ObjectPath="\Events\Default Work Unit\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Stop_amb_beds_gen_rain_light_loop" GUID="{F290363A-9AD7-42A3-8FF0-2C7A798042DF}" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
-				<Event Id="238368144" Name="Stop_amb_beds_gen_rain_moderate_loop" ObjectPath="\Events\Default Work Unit\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Stop_amb_beds_gen_rain_moderate_loop" GUID="{DA368500-E752-4B8A-BCCE-AACDBFD3D955}" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="4083200837" Name="Stop_amb_beds_gen_rain_light_loop" ObjectPath="\Events\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Stop_amb_beds_gen_rain_light_loop" GUID="{F290363A-9AD7-42A3-8FF0-2C7A798042DF}" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="238368144" Name="Stop_amb_beds_gen_rain_moderate_loop" ObjectPath="\Events\Environment\Environment_Ambience\Environment_Ambience_Beds\Environment_Ambience_Beds_00_Generic\Rain\Stop_amb_beds_gen_rain_moderate_loop" GUID="{DA368500-E752-4B8A-BCCE-AACDBFD3D955}" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
 			</IncludedEvents>
 		</SoundBank>
 	</SoundBanks>

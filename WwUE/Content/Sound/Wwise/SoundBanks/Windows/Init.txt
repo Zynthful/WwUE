@@ -1,6 +1,8 @@
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	85412153	Ambience			\Default Work Unit\Master Audio Bus\Ambience	
 	393239870	SFX			\Default Work Unit\Master Audio Bus\SFX	
+	1731313517	SFX_Weapons_LMTM4			\Default Work Unit\Master Audio Bus\SFX\SFX_Weapons\SFX_Weapons_LMTM4	
+	1849655212	SFX_Weapons			\Default Work Unit\Master Audio Bus\SFX\SFX_Weapons	
 	2903397179	Ambisonics			\Default Work Unit\Master Audio Bus\Ambisonics	
 	3170124113	Voice			\Default Work Unit\Master Audio Bus\Voice	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

@@ -1,0 +1,648 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{A2ED2FBA-BB71-4F2F-8B01-CC0E6C514191}" SchemaVersion="103" RootDocumentID="{9CBD0CCC-3C57-4D05-9B22-5B18D837F6E2}" ParentDocumentID="{E76E0A94-D419-4AE7-9241-A2F130344868}">
+	<AudioObjects>
+		<WorkUnit Name="SFX_Weapons_LMTM4" ID="{A2ED2FBA-BB71-4F2F-8B01-CC0E6C514191}" OwnerID="{7E41F566-53F3-463D-9689-7F958E2E3DB8}" PersistMode="Nested">
+			<ChildrenList>
+				<ActorMixer Name="s_weapons_lmtm4" ID="{DCC9DFCE-4B85-4362-AF3A-BDA9D37B574C}" ShortID="1066835113">
+					<PropertyList>
+						<Property Name="OverrideOutput" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX_Weapons_LMTM4" ID="{7ED6D6AD-5EE9-4EC0-8085-DFE90628C89E}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="s_weapons_lmtm4_fire_single" ID="{B836133A-EF5E-42DF-A1CB-A0518BE65370}" ShortID="786299648">
+							<PropertyList>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_01" ID="{C5FE0A0B-597D-4132-B3E7-E09E0C8E525E}" ShortID="220642442">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_01" ID="{FF3313A4-0644-459C-87C9-3252ECF5EF29}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1007421288"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_01" ID="{FF3313A4-0644-459C-87C9-3252ECF5EF29}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_02" ID="{BBF0D9B6-D96F-4187-89BE-0623D665D828}" ShortID="307990115">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_02" ID="{3C528E12-AB70-44B1-ADE4-B9A3F5F82BF2}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="182539067"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_02" ID="{3C528E12-AB70-44B1-ADE4-B9A3F5F82BF2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_03" ID="{77D5F898-DE19-4A20-9E51-028C2058B740}" ShortID="69384605">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_03" ID="{BAB580F9-02E9-4BA4-934A-75A550FA6ECD}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="372933229"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_03" ID="{BAB580F9-02E9-4BA4-934A-75A550FA6ECD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_04" ID="{FCAFB76A-ACF7-42C2-AD18-B85CBE265633}" ShortID="613530144">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_04" ID="{F9FE9AE7-2317-49F2-A8BA-59304AB0D31E}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="202970682"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_04" ID="{F9FE9AE7-2317-49F2-A8BA-59304AB0D31E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_05" ID="{D73B45A0-F118-4566-92EB-E546FF8061A9}" ShortID="22078350">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_05" ID="{9A0A89BB-6AB9-466D-95CE-5C9146BF856A}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1036641685"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_05" ID="{9A0A89BB-6AB9-466D-95CE-5C9146BF856A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_06" ID="{80B6D653-D535-4F48-B947-9ACDC842CD6A}" ShortID="7866781">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_06" ID="{F08F42F2-DE70-4CB1-8D2B-65A724C1E3F8}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="174478270"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_06" ID="{F08F42F2-DE70-4CB1-8D2B-65A724C1E3F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_07" ID="{C6400D41-3929-42B2-AD0B-282632FA7162}" ShortID="22472361">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_07" ID="{8E8BD2D7-EA6F-4830-994D-D8FB9FCEFB84}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="597414878"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_07" ID="{8E8BD2D7-EA6F-4830-994D-D8FB9FCEFB84}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_08" ID="{4BA518E9-069C-48AA-89B8-7395C541136F}" ShortID="694838207">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_08" ID="{06499EBD-2624-4116-89C4-9F373D371941}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="831467842"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_08" ID="{06499EBD-2624-4116-89C4-9F373D371941}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_09" ID="{2142735D-6CFE-45F4-98AD-6DD9597C51DF}" ShortID="186363288">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_09" ID="{049072C2-C034-4CBD-938A-78223AF8F440}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_09.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="261215696"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_09" ID="{049072C2-C034-4CBD-938A-78223AF8F440}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_10" ID="{18B77749-3818-45CF-A256-A4CBC8492474}" ShortID="987858886">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_10" ID="{286A819B-47E6-44A5-96EC-76502184B2F0}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_10.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="977892659"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_10" ID="{286A819B-47E6-44A5-96EC-76502184B2F0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_11" ID="{3D7E0497-84FE-49F6-B312-D37D9B8FB330}" ShortID="228608693">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_11" ID="{F01D7015-64D0-439F-ADED-28919EF51CDD}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_11.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1022900570"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_11" ID="{F01D7015-64D0-439F-ADED-28919EF51CDD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="s_weapons_lmtm4_fire_tail" ID="{5E6F7141-EF9E-492F-AB40-537C13538C8C}" ShortID="205250680">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="s_weapons_lmtm4_fire_auto" ID="{BCF9D27E-DAD0-491A-B077-9B435B8D230E}" ShortID="308924504">
+							<PropertyList>
+								<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.09"/>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX_Weapons_LMTM4" ID="{7ED6D6AD-5EE9-4EC0-8085-DFE90628C89E}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_01" ID="{DFF4E803-2200-46F9-B566-876AA4B16E5D}" ShortID="742332677">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_01" ID="{F179ABC4-BA17-4F68-8B14-816474591B40}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1007421288"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_01" ID="{F179ABC4-BA17-4F68-8B14-816474591B40}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_02" ID="{4C78EE99-C805-45F4-A304-479C80F41CAB}" ShortID="396747120">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_02" ID="{DD867E92-E0C7-4076-8C71-9545C25BC6BF}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="182539067"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_02" ID="{DD867E92-E0C7-4076-8C71-9545C25BC6BF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_03" ID="{F23C9DBB-6AB8-45DE-B211-062D6731F7A2}" ShortID="288465313">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_03" ID="{0F3C1D20-6300-43CC-99DE-136C261BC287}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="372933229"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_03" ID="{0F3C1D20-6300-43CC-99DE-136C261BC287}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_04" ID="{F434D39B-215C-487F-B9F9-FCDF80AB41D1}" ShortID="982047461">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_04" ID="{39BAE1AF-F0C8-4651-8A32-643918F7B910}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="202970682"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_04" ID="{39BAE1AF-F0C8-4651-8A32-643918F7B910}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_05" ID="{9F895509-123D-48CA-AB36-682303BC5258}" ShortID="675413352">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_05" ID="{27853897-421E-492A-8E92-D6F456C27A6A}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1036641685"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_05" ID="{27853897-421E-492A-8E92-D6F456C27A6A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_06" ID="{74466FCC-188F-4934-84DE-C4F43C82A69E}" ShortID="588459624">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_06" ID="{7BA4347D-B054-4E97-9AF8-A4CEA438F78A}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="174478270"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_06" ID="{7BA4347D-B054-4E97-9AF8-A4CEA438F78A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_07" ID="{BFF3752B-289A-4CDE-97D4-E01307DF7A66}" ShortID="537157637">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_07" ID="{5C22B7E1-63F3-45CB-A501-AA247C659E56}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="597414878"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_07" ID="{5C22B7E1-63F3-45CB-A501-AA247C659E56}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_08" ID="{EBEAE2AD-CAC7-44CC-AC59-15E28BF3C7CF}" ShortID="88915088">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_08" ID="{01CF5EA3-A231-4ED9-9F4D-86E7E058EC93}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="831467842"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_08" ID="{01CF5EA3-A231-4ED9-9F4D-86E7E058EC93}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_09" ID="{1769E69E-298F-49C9-84EA-1A39516B1A93}" ShortID="549618019">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_09" ID="{756685A1-068E-45A2-BDAD-34C5A1C676E1}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_09.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="261215696"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_09" ID="{756685A1-068E-45A2-BDAD-34C5A1C676E1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_10" ID="{56C85A71-7A5B-44F5-B5B8-11B003675EC7}" ShortID="807451759">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_10" ID="{116F6A5D-252B-46AE-816D-7B6CBE1B0481}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_10.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="977892659"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_10" ID="{116F6A5D-252B-46AE-816D-7B6CBE1B0481}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_11" ID="{662FF5EC-ED21-4F0D-AE5E-B4FD1C5128D3}" ShortID="5961712">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gun_LMT M4_Single Shots_Designed_3P_11" ID="{82749097-20C9-435B-A10F-514179A05B09}">
+											<Language>SFX</Language>
+											<AudioFile>Gun_LMT M4_Single Shots_Designed_3P_11.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1022900570"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gun_LMT M4_Single Shots_Designed_3P_11" ID="{82749097-20C9-435B-A10F-514179A05B09}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="s_weapons_lmtm4_fire_single_midi" ID="{FCB5465A-AF75-472E-B9F1-2107F4C78C0C}" ShortID="517814621">
+							<PropertyList>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX_Weapons_LMTM4" ID="{7ED6D6AD-5EE9-4EC0-8085-DFE90628C89E}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<Sound Name="midi test" ID="{592060CC-8536-4324-9F59-95CF06324CF2}" ShortID="987977216">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX_Weapons_LMTM4" ID="{7ED6D6AD-5EE9-4EC0-8085-DFE90628C89E}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<SourcePlugin Name="Wwise Synth One" ID="{C82EF33B-AB10-4420-ACED-DF98192272FB}" ShortID="934364874" PluginName="Wwise Synth One" CompanyID="0" PluginID="148">
+									<PropertyList>
+										<Property Name="FrequencyMode" Type="int32" Value="1"/>
+										<Property Name="OutputLevel" Type="Real32">
+											<RTPCList>
+												<RTPC Name="" ID="{21481D7A-3C19-4B75-A9A9-C2E86E3D98AD}" ShortID="372171495">
+													<ReferenceList>
+														<Reference Name="ControlInput">
+															<Custom>
+																<ModulatorEnvelope Name="Modulator Envelope (Custom)" ID="{38ADC345-4271-4A1E-AA83-C5446D9E8FEB}" ShortID="190616363">
+																	<PropertyList>
+																		<Property Name="EnvelopeAttackTime" Type="Real64" Value="0.01"/>
+																	</PropertyList>
+																</ModulatorEnvelope>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<Curve Name="" ID="{F1A8D26F-19D9-4B8A-8CFD-65EC8812430D}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-96</YPos>
+																<Flags>21</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>53</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</RTPC>
+											</RTPCList>
+										</Property>
+									</PropertyList>
+									<Language>SFX</Language>
+								</SourcePlugin>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="Wwise Synth One" ID="{C82EF33B-AB10-4420-ACED-DF98192272FB}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists/>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

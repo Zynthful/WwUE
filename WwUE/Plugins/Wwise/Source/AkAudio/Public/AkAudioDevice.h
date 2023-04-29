@@ -102,6 +102,8 @@ struct AkGameObjectIdKeyFuncs : TDefaultMapKeyFuncs<AkGameObjectID, ValueType, b
 struct AKAUDIO_API FAkAudioDeviceDelegates
 {
 	DECLARE_MULTICAST_DELEGATE_TwoParams(FOnAkGlobalCallback, AK::IAkGlobalPluginContext*, AkGlobalCallbackLocation);
+
+	DECLARE_DELEGATE_OneParam(FOnAkMIDIGlobalCallback, AkAudioSettings*);
 };
 
 
@@ -1380,6 +1382,11 @@ public:
 	 * @return	Returns the handle of the delegate that must be used to unregister the callback.
 	 */
 	FDelegateHandle RegisterGlobalCallback(FAkAudioDeviceDelegates::FOnAkGlobalCallback::FDelegate Callback, AkGlobalCallbackLocation Location);
+
+	/**
+	 * AkMIDIGlobalCallback Instance, Bind Callback Function On AkMIDI Module
+	 */
+	FAkAudioDeviceDelegates::FOnAkMIDIGlobalCallback OnMessageWaitToSend;
 
 	/**
 	 * Unregisters a callback that can run within the global callback at a specific AkGlobalCallbackLocation.

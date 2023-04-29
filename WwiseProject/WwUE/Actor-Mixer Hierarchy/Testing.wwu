@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{94474BF9-93C2-4C83-A950-1E5488488D80}" SchemaVersion="103" RootDocumentID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}" ParentDocumentID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}">
+<WwiseDocument Type="WorkUnit" ID="{94474BF9-93C2-4C83-A950-1E5488488D80}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Testing" ID="{94474BF9-93C2-4C83-A950-1E5488488D80}" OwnerID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}" PersistMode="Nested">
+		<WorkUnit Name="Testing" ID="{94474BF9-93C2-4C83-A950-1E5488488D80}" PersistMode="Standalone">
 			<PropertyList>
 				<Property Name="Color" Type="int16" Value="26"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>

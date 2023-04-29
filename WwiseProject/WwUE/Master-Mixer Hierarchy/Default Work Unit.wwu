@@ -15,6 +15,23 @@
 								<Property Name="Color" Type="int16" Value="15"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
+							<ChildrenList>
+								<Bus Name="SFX_Weapons" ID="{A1399492-DB8B-43BA-9813-7040EB52B962}">
+									<ChildrenList>
+										<Bus Name="SFX_Weapons_LMTM4" ID="{7ED6D6AD-5EE9-4EC0-8085-DFE90628C89E}">
+											<PropertyList>
+												<Property Name="BusVolume" Type="Real64">
+													<ValueList>
+														<Value>-10</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ObjectLists/>
+										</Bus>
+									</ChildrenList>
+									<ObjectLists/>
+								</Bus>
+							</ChildrenList>
 							<ObjectLists/>
 						</Bus>
 						<Bus Name="Voice" ID="{BBA84B8E-4620-4C6B-8337-354F315609A8}">

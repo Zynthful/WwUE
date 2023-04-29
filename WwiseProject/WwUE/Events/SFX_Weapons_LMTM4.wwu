@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9C23A427-B0A4-455F-ACA1-0026F27BAA23}" SchemaVersion="103" RootDocumentID="{649D0C65-21A7-461F-AAA7-CCB58F17ACC4}" ParentDocumentID="{9E8C0839-191B-4C17-9652-D27CFCB47088}">
+	<Events>
+		<WorkUnit Name="SFX_Weapons_LMTM4" ID="{9C23A427-B0A4-455F-ACA1-0026F27BAA23}" OwnerID="{9E8C0839-191B-4C17-9652-D27CFCB47088}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Play_wpn_lmtm4_fire_single" ID="{68BA51A7-3179-4DEC-AF59-FDA61668CC62}">
+					<ChildrenList>
+						<Action Name="" ID="{E5153CA4-A52E-459A-95EE-666E1A119019}" ShortID="159204163">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="s_weapons_lmtm4_fire_single" ID="{B836133A-EF5E-42DF-A1CB-A0518BE65370}" WorkUnitID="{A2ED2FBA-BB71-4F2F-8B01-CC0E6C514191}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_wpn_lmtm4_fire_tail" ID="{07BB7AB8-09A3-4B89-AAED-0E0A472A06BB}">
+					<ChildrenList>
+						<Action Name="" ID="{544D6FFC-96D0-47F9-B1C6-406FA36C22BF}" ShortID="72414847">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="s_weapons_lmtm4_fire_tail" ID="{5E6F7141-EF9E-492F-AB40-537C13538C8C}" WorkUnitID="{A2ED2FBA-BB71-4F2F-8B01-CC0E6C514191}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_wpn_lmtm4_fire_auto" ID="{FFB895C1-A669-41F5-8062-39B86EFB5F38}">
+					<ChildrenList>
+						<Action Name="" ID="{F871BC8B-A58A-4176-AFBD-F2F3F0ECE0A3}" ShortID="239503108">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="s_weapons_lmtm4_fire_auto" ID="{BCF9D27E-DAD0-491A-B077-9B435B8D230E}" WorkUnitID="{A2ED2FBA-BB71-4F2F-8B01-CC0E6C514191}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

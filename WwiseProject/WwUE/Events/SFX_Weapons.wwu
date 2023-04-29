@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9E8C0839-191B-4C17-9652-D27CFCB47088}" SchemaVersion="103" RootDocumentID="{649D0C65-21A7-461F-AAA7-CCB58F17ACC4}" ParentDocumentID="{649D0C65-21A7-461F-AAA7-CCB58F17ACC4}">
+	<Events>
+		<WorkUnit Name="SFX_Weapons" ID="{9E8C0839-191B-4C17-9652-D27CFCB47088}" OwnerID="{649D0C65-21A7-461F-AAA7-CCB58F17ACC4}" PersistMode="Nested">
+			<ChildrenList>
+				<WorkUnit Name="SFX_Weapons_LMTM4" ID="{9C23A427-B0A4-455F-ACA1-0026F27BAA23}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

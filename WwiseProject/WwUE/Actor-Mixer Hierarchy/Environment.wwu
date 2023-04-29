@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{D2421FA8-C666-42D5-986B-20901B1C6564}" SchemaVersion="103" RootDocumentID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}" ParentDocumentID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}">
+<WwiseDocument Type="WorkUnit" ID="{D2421FA8-C666-42D5-986B-20901B1C6564}" SchemaVersion="103">
 	<AudioObjects>
-		<WorkUnit Name="Environment" ID="{D2421FA8-C666-42D5-986B-20901B1C6564}" OwnerID="{E26E0C6A-1515-4D49-A875-1ABD49078D4D}" PersistMode="Nested">
+		<WorkUnit Name="Environment" ID="{D2421FA8-C666-42D5-986B-20901B1C6564}" PersistMode="Standalone">
 			<ChildrenList>
 				<ActorMixer Name="Environment_Main" ID="{300222B7-2C9F-4E79-9A77-D74B1DAD5649}" ShortID="913542988">
 					<ReferenceList>

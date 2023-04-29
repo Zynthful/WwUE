@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{1508B8BB-BA6C-4BD9-B43E-729989855550}" SchemaVersion="103">
+	<InteractiveMusic>
+		<WorkUnit Name="SFX" ID="{1508B8BB-BA6C-4BD9-B43E-729989855550}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="SFX_Weapons" ID="{2710BD97-D14F-4C76-8CF8-523E2201A5F5}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>

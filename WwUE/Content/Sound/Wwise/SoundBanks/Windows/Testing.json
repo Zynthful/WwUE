@@ -24,7 +24,7 @@
      {
       "Id": "2866913994",
       "Name": "Play_test_beep_long",
-      "ObjectPath": "\\Events\\Default Work Unit\\Testing\\Testing_Beeps\\Play_test_beep_long",
+      "ObjectPath": "\\Events\\Testing\\Testing_Beeps\\Play_test_beep_long",
       "GUID": "{25FF2DB1-A899-4DEA-8530-131DE72C6312}",
       "DurationType": "OneShot",
       "DurationMin": "2.",
@@ -41,7 +41,7 @@
      {
       "Id": "2232761158",
       "Name": "Play_test_beep_short",
-      "ObjectPath": "\\Events\\Default Work Unit\\Testing\\Testing_Beeps\\Play_test_beep_short",
+      "ObjectPath": "\\Events\\Testing\\Testing_Beeps\\Play_test_beep_short",
       "GUID": "{B45F46D9-6240-48E4-A8A6-9155D28DEB76}",
       "DurationType": "OneShot",
       "DurationMin": "2.",
