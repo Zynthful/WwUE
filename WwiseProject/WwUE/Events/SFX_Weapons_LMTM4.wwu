@@ -12,6 +12,34 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{74D4DDAB-7F90-4F1E-842E-243FD40B64B9}" ShortID="388774714">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="wpn_fire" ID="{05EA5A99-4F16-48F2-9E19-260616E0AFEE}" WorkUnitID="{2710BD97-D14F-4C76-8CF8-523E2201A5F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{B5F99723-BF06-4195-8BEF-9842A4B77375}" ShortID="387467535">
+							<PropertyList>
+								<Property Name="Inclusion" Type="bool">
+									<ValueList>
+										<Value>False</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="wpn_fire" ID="{D1381F63-6982-42B0-BC64-10A4051A5900}" WorkUnitID="{2710BD97-D14F-4C76-8CF8-523E2201A5F5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_wpn_lmtm4_fire_tail" ID="{07BB7AB8-09A3-4B89-AAED-0E0A472A06BB}">

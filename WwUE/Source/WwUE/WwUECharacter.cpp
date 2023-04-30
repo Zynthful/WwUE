@@ -10,6 +10,7 @@
 #include "WwUEWwise.h"
 #include "AkAudioEvent.h"
 #include "AkComponent.h"
+//#include "AkAudioDevice.h"
 
 DEFINE_LOG_CATEGORY(LogCharacter);
 
@@ -124,13 +125,21 @@ void AWwUECharacter::StartFiring(const FInputActionValue& Value)
 
 	UE_LOG(LogCharacter, Verbose, TEXT("StartFiring = %s"), *GetName());
 
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("START FIRING")));
+	}
+
 	bIsFiring = true;
+	NumShotsFiredThisStream = 0;
 
 	FireSingle();
 
 	FTimerDelegate TD_FireInterval;
 	TD_FireInterval.BindUFunction(this, GET_FUNCTION_NAME_CHECKED(AWwUECharacter, FireSingle));
 	GetWorldTimerManager().SetTimer(TH_FireInterval, TD_FireInterval, FireInterval, true);
+
+	PrepareAkMIDICallback();
 }
 
 void AWwUECharacter::StopFiring(const FInputActionValue& Value)
@@ -142,6 +151,11 @@ void AWwUECharacter::StopFiring(const FInputActionValue& Value)
 
 	UE_LOG(LogCharacter, Verbose, TEXT("StopFiring = %s"), *GetName());
 
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("STOP FIRING, Num = %d"), NumShotsFiredThisStream));
+	}
+
 	bIsFiring = false;
 
 	FTimerManager& WorldTimerManager = GetWorldTimerManager();
@@ -149,54 +163,163 @@ void AWwUECharacter::StopFiring(const FInputActionValue& Value)
 	{
 		WorldTimerManager.ClearTimer(TH_FireInterval);
 	}
+
+	ReleaseAkMIDICallback();
+
+	NumShotsFiredThisStream = 0;
 }
 
 void AWwUECharacter::FireSingle()
 {
 	UE_LOG(LogCharacter, Verbose, TEXT("FireSingle = %s"), *GetName());
 
-	// this throws an exception : (
-	//AK::SoundEngine::RegisterGlobalCallback(&StaticFireSingleMIDICallback, AkGlobalCallbackLocation_PreProcessMessageQueueForRender);
-
-	if (FireSingleAkEvent)
+	if (GEngine)
 	{
-		FMIDIEvent MIDIEvent;
-		MIDIEvent.Channel = 0;
-		MIDIEvent.NoteType = EMIDINoteType::NoteOn;
-		MIDIEvent.ParamOne = 60;
-		MIDIEvent.ParamTwo = 96;
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Orange, FString::Printf(TEXT("(GAME) FireSingle")));
+	}
 
-		uint64 SampleTick = UAkMIDIGameplayStatics::GetSampleTick();
-		GEngine->AddOnScreenDebugMessage(1372843, 2.f, FColor::Red, FString::Printf(TEXT("SampleTick = %llu"), SampleTick));
+	NumShotsFiredThisStream++;
+}
 
-		uint32 CurrentCallbackCount = 0;
+void AWwUECharacter::PrepareAkMIDICallback()
+{
+	// Bind to AkAudioDevice's MIDI callback (PreProcessMessageQueueForRender)
+	// So we start queueing gunfire audio from that callback
+	FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
+	if (AkAudioDevice == nullptr)
+	{
+		UE_LOG(LogCharacter, Error, TEXT("PrepareAkMIDICallback failed! | Failed to get AkAudioDevice"));
+		return;
+	}
+	AkAudioDevice->OnMessageWaitToSend.BindUObject(this, &AWwUECharacter::AkMIDICallback);
 
-		// Calculate milliseconds per callback
-		// Multiply by 1000 to convert seconds -> milliseconds
-		AkAudioSettings AudioSettings = UAkMIDIGameplayStatics::GetAudioSettings();
-		double MsPerCallback = ((uint64)AudioSettings.uNumSamplesPerFrame / (uint64)AudioSettings.uNumSamplesPerSecond) * 1000;
+	AkAudioSettings AudioSettings = UAkMIDIGameplayStatics::GetAudioSettings();
 
-		uint32 SamplesPerCallback = AudioSettings.uNumSamplesPerFrame;
+	SamplesPerCallback = AudioSettings.uNumSamplesPerFrame;
+	PostLengthSamples = FMath::Max(PostLengthSamples, SamplesPerCallback);
+	CurrentCallbackCount = 0;
+	MsPerCallback = ((double)AudioSettings.uNumSamplesPerFrame / (double)AudioSettings.uNumSamplesPerSecond) * 1000;
+	TimeUntilNextFireMs = 0;
+	bReleaseMIDICallback = false;
 
-		//double InterPostTimeMs;
-		//double PostLengthMs = FMath::Min(MsPerCallback, InterPostTimeMs);
-		//uint32 PostLengthSamples = (uint32)((PostLengthMs / MsPerCallback) * SamplesPerCallback);
+	InitAkMIDIFireInterval();
+}
 
-		//double CurrentTimeMs = (double)CurrentCallbackCount * MsPerCallback;
+void AWwUECharacter::ReleaseAkMIDICallback()
+{
+	// Unbind fromm AkAudioDevice's MIDI callback (PreProcessMessageQueueForRender)
+	// So we stop queueing any additional gunfire audio
+	FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
+	if (AkAudioDevice == nullptr)
+	{
+		UE_LOG(LogCharacter, Error, TEXT("ReleaseAkMIDICallback failed! | Failed to get AkAudioDevice"));
+		return;
+	}
 
-		UWwUEWwise::PostMIDIOnEvent(FireSingleAkEvent, AkComponent, MIDIEvent);
+	// Ensure we live at least one callback
+	// (so if we release too early, we still hear a fire sound)
+	if (CurrentCallbackCount <= 0)
+	{
+		// Handle releasing callback on callback finished
+		bReleaseMIDICallback = true;
+	}
+	else
+	{
+		AkAudioDevice->OnMessageWaitToSend.Unbind();
+	}
+
+	//UAkMIDIGameplayStatics::StopMIDIOnEvent(FireSingleAkEvent, AkComponent, FiringPlayingID);
+}
+
+void AWwUECharacter::AkMIDICallback(AkAudioSettings* AudioSettings)
+{
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("AkMIDICallback")));
+	}
+
+	// Calculate current frame and next frame times
+	double CurrentCallbackTimeMs = (double)CurrentCallbackCount * MsPerCallback;
+	double NextCallbackTimeMs = CurrentCallbackTimeMs + MsPerCallback;
+
+	// Failsafe!
+	if (CurrentCallbackTimeMs > TimeUntilNextFireMs)
+	{
+		TimeUntilNextFireMs = CurrentCallbackTimeMs;
+	}
+
+	// Must we post this frame?
+	if (TimeUntilNextFireMs >= CurrentCallbackTimeMs && TimeUntilNextFireMs <= NextCallbackTimeMs)
+	{
+		// Calculate sample offset, relative to current frame, to post MIDI eventss
+		double SampleOffsetPercent = (TimeUntilNextFireMs - CurrentCallbackTimeMs) / MsPerCallback;
+		uint32 SampleOffset = (uint32)(SampleOffsetPercent * SamplesPerCallback);
+
+		TArray<FMIDIEvent> MIDIEvents;
+
+		FMIDIEvent NoteOnMIDIEvent;
+		NoteOnMIDIEvent.NoteType = EMIDINoteType::NoteOn;
+		NoteOnMIDIEvent.Channel = 0;
+		NoteOnMIDIEvent.OffsetSamples = SampleOffset;
+		NoteOnMIDIEvent.ParamOne = 60;
+		NoteOnMIDIEvent.ParamTwo = 96;
+
+		FMIDIEvent NoteOffMIDIEvent;
+		NoteOffMIDIEvent.NoteType = EMIDINoteType::NoteOff;
+		NoteOffMIDIEvent.Channel = 0;
+		NoteOffMIDIEvent.OffsetSamples = SampleOffset + PostLengthSamples;
+		NoteOffMIDIEvent.ParamOne = 60;
+		NoteOffMIDIEvent.ParamTwo = 0;
+
+		MIDIEvents.Emplace(NoteOnMIDIEvent);
+		MIDIEvents.Emplace(NoteOffMIDIEvent);
+
+		if (FiringPlayingID != AK_INVALID_PLAYING_ID)
+		{
+			UAkMIDIGameplayStatics::StopMIDIOnEvent(FireSingleAkEvent, AkComponent, FiringPlayingID);
+		}
+
+		// Post MIDI events
+		FiringPlayingID = UWwUEWwise::PostMIDIOnEvent(FireSingleAkEvent, AkComponent, MIDIEvents, FiringPlayingID);
+		++PostCounter;
+
+		if (GEngine)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Cyan, FString::Printf(TEXT("Posting MIDI events, PostCounter = %d, PlayingID = %d, NoteOnSampleOffset = %d, NoteOffSampleOffset = %d"), PostCounter, FiringPlayingID, SampleOffset, SampleOffset + PostLengthSamples));
+		}
+
+		// Update post time in context
+		TimeUntilNextFireMs += (FireInterval * 1000);
+	}
+
+	// Update counter
+	++CurrentCallbackCount;
+
+	if (bReleaseMIDICallback)
+	{
+		ReleaseAkMIDICallback();
 	}
 }
 
-void AWwUECharacter::StaticFireSingleMIDICallback(AK::IAkGlobalPluginContext* Context, AkGlobalCallbackLocation Location, void* Cookie)
+void AWwUECharacter::OnFireIntervalChanged(float Value)
 {
-
+	InitAkMIDIFireInterval();
 }
 
-void AWwUECharacter::ObjectFireSingleMIDICallback(AK::IAkGlobalPluginContext* Context, AkGlobalCallbackLocation Location, void* Cookie)
+void AWwUECharacter::InitAkMIDIFireInterval()
 {
-	uint8 Note = 70;
-	uint8 Channel = 1;
-	uint32 StartOffsetSamples = 0;
-	//UWwUEWwise::PostMIDIOnEvent(FireSingleAkEvent, AkComponent, Note, Channel, StartOffsetSamples);
+	double FireIntervalMs = FireInterval * 1000;
+	double CurrentCallbackTimeMs = (double)CurrentCallbackCount * MsPerCallback;
+
+	// Calculate potential next shot time
+	// If the potential next shott happens sooner than our current expected next shot, use the potential instead
+	double MaybeTimeUntilNextFireMs = CurrentCallbackTimeMs + FireIntervalMs;
+	if (MaybeTimeUntilNextFireMs < TimeUntilNextFireMs)
+	{
+		TimeUntilNextFireMs = MaybeTimeUntilNextFireMs;
+	}
+
+	double PostLengthMs = FMath::Min(MsPerCallback, FireIntervalMs);
+	PostLengthSamples = (uint32)((PostLengthMs / MsPerCallback) * SamplesPerCallback);
+	PostLengthSamples = FMath::Min(PostLengthSamples, SamplesPerCallback);
 }

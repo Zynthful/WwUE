@@ -25,6 +25,9 @@ namespace AK
 	class IAkGlobalPluginContext;
 }
 
+struct AkAudioSettings;
+struct FMIDIEvent;
+
 enum AkGlobalCallbackLocation;
 
 UCLASS(config=Game)
@@ -62,14 +65,30 @@ public:
 	bool GetHasRifle();
 
 protected:
+
+	UFUNCTION(BlueprintCallable)
 	void StartFiring(const FInputActionValue& Value);
+
+	UFUNCTION(BlueprintCallable)
 	void StopFiring(const FInputActionValue& Value);
 
 	UFUNCTION()
 	void FireSingle();
 
-	static void StaticFireSingleMIDICallback(AK::IAkGlobalPluginContext* Context, AkGlobalCallbackLocation Location, void* Cookie);
-	void ObjectFireSingleMIDICallback(AK::IAkGlobalPluginContext* Context, AkGlobalCallbackLocation Location, void* Cookie);
+	/* Bind to MIDI callback so we can start queueing gunfire audio ahead of time, plus calculating the necessary variables */
+	void PrepareAkMIDICallback();
+
+	/* Unbind from MIDI callback so we stop playing gunfire audio, plus resetting the necessary variables */
+	void ReleaseAkMIDICallback();
+
+	/* MIDI callback from Wwise which is executed every buffer/audio frame 
+	 * This is used to trigger the gunfire audio at the exact sample (at x% through a buffer/audio frame) to ensure sample accuracy
+	*/
+	void AkMIDICallback(AkAudioSettings* AudioSettings);
+
+	void OnFireIntervalChanged(float Value);
+
+	void InitAkMIDIFireInterval();
 
 private:
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
@@ -120,5 +139,43 @@ protected:
 
 	UPROPERTY(EditDefaultsOnly, Category = "WwUECharacter|Sound")
 	UAkAudioEvent* FireSingleAkEvent;
+
+	/* MIDI ------------------------------------------------------------------- */
+
+	/* Pool of MIDI events that can be posted on the next callback */
+	UPROPERTY()
+	TArray<FMIDIEvent> MIDIEventPool;
+
+	/* Number of times we've called PostMIDIOnEvent in the current stream of shots */
+	uint32 PostCounter;
+
+	/* Length of the MIDI events to post in samples*/
+	uint32 PostLengthSamples;
+
+	/* Number of samples per callback */
+	uint32 SamplesPerCallback;
+
+	/* How many callbacks have happened so far */
+	uint32 CurrentCallbackCount;
+
+	/* Time between callbacks in milliseconds*/
+	double MsPerCallback;
+
+	/* Time between shots in milliseconds*/
+	//double FireIntervalMs;
+
+	/* Time until the next shot in milliseconds*/
+	double TimeUntilNextFireMs;
+
+	/* Whether to release the MIDI callback on finishing AkMIDICallback */
+	uint8 bReleaseMIDICallback : 1;
+
+	uint32 FiringPlayingID;
+
+	/* End MIDI -------------------------------------------------------------- */
+
+	uint32 NumShotsFiredThisStream;
+
+
 };
 

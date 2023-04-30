@@ -13,19 +13,19 @@ int32 UAkMIDIGameplayStatics::PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkCompone
 {
 	if (AkEvent == nullptr)
 	{
-		UE_LOG(LogAkMIDI, Error, TEXT("PostMIDIOnEvent failed | AkEvent was nullptr"))
+		UE_LOG(LogAkMIDI, Error, TEXT("PostMIDIOnEvent failed | AkEvent was nullptr"));
 		return AK_INVALID_PLAYING_ID;
 	}
 
 	if (AkComponent == nullptr)
 	{
-		UE_LOG(LogAkMIDI, Error, TEXT("PostMIDIOnEvent failed | AkComponent was nullptr"))
+		UE_LOG(LogAkMIDI, Error, TEXT("PostMIDIOnEvent failed | AkComponent was nullptr"));
 		return AK_INVALID_PLAYING_ID;
 	}
 
 	if (MIDIEvents.IsEmpty())
 	{
-		UE_LOG(LogAkMIDI, Error, TEXT("PostMIDIOnEvent failed | MIDIEvents was empty"))
+		UE_LOG(LogAkMIDI, Error, TEXT("PostMIDIOnEvent failed | MIDIEvents was empty"));
 		return AK_INVALID_PLAYING_ID;
 	}
 
@@ -50,6 +50,15 @@ int32 UAkMIDIGameplayStatics::PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkCompone
 	AK::SoundEngine::RenderAudio(bAllowSyncRender);
 
 	return PlayingID;
+}
+
+bool UAkMIDIGameplayStatics::StopMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, int32 PlayingID)
+{
+	AkUniqueID EventID = AkEvent ? FAkAudioDevice::GetIDFromString(AkEvent->GetName()) : AK_INVALID_PLAYING_ID;
+	AkUniqueID GameObjectID = AkComponent ? AkComponent->GetAkGameObjectID() : AK_INVALID_GAME_OBJECT;
+
+	AKRESULT Result = AK::SoundEngine::StopMIDIOnEvent(EventID, GameObjectID, PlayingID);
+	return Result == AK_Success;
 }
 
 int64 UAkMIDIGameplayStatics::GetSampleTick()

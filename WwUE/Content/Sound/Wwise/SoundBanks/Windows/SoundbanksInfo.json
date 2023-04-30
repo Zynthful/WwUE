@@ -60,7 +60,6 @@
     "Id": "1512859615",
     "GUID": "{0D23AA39-3A2F-4306-883A-DD9104822DCC}",
     "Language": "SFX",
-    "Hash": "2524626722",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Testing",
     "ShortName": "Testing",
     "Path": "Testing.bnk",
@@ -105,7 +104,6 @@
     "Id": "2167721767",
     "GUID": "{5E297027-7D74-4778-A7F4-E259ABAB7425}",
     "Language": "SFX",
-    "Hash": "3760753247",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Environment\\Environment_Ambience\\Environment_Ambience_Beds\\Environment_Ambience_Beds_00_Generic",
     "ShortName": "Environment_Ambience_Beds_00_Generic",
     "Path": "Environment_Ambience_Beds_00_Generic.bnk",
@@ -166,7 +164,7 @@
     "Id": "3645460479",
     "GUID": "{AF60BC58-8B45-4EE1-B35A-51305672B003}",
     "Language": "SFX",
-    "Hash": "3204271731",
+    "Hash": "2503718400",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SFX\\SFX_Weapons\\SFX_Weapons_LMTM4\\SFXWeaponsLMTM4",
     "ShortName": "SFXWeaponsLMTM4",
     "Path": "SFXWeaponsLMTM4.bnk",
@@ -253,73 +251,13 @@
       "GUID": "{68BA51A7-3179-4DEC-AF59-FDA61668CC62}",
       "DurationType": "OneShot",
       "DurationMin": "6.",
-      "DurationMax": "6.000005",
+      "DurationMax": "6.",
       "IncludedMemoryFiles": [
-       {
-        "Id": "174478270",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_06.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_06_10C4C929.wem"
-       },
-       {
-        "Id": "182539067",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_02.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_02_10C4C929.wem"
-       },
-       {
-        "Id": "202970682",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_04.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_04_10C4C929.wem"
-       },
-       {
-        "Id": "261215696",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_09.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_09_10C4C929.wem"
-       },
-       {
-        "Id": "372933229",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_03.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_03_10C4C929.wem"
-       },
-       {
-        "Id": "597414878",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_07.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_07_10C4C929.wem"
-       },
-       {
-        "Id": "831467842",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_08.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_08_10C4C929.wem"
-       },
-       {
-        "Id": "977892659",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_10.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_10_10C4C929.wem"
-       },
        {
         "Id": "1007421288",
         "Language": "SFX",
         "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_01.wav",
         "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_01_10C4C929.wem"
-       },
-       {
-        "Id": "1022900570",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_11.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_11_10C4C929.wem"
-       },
-       {
-        "Id": "1036641685",
-        "Language": "SFX",
-        "ShortName": "Gun_LMT M4_Single Shots_Designed_3P_05.wav",
-        "Path": "SFX\\Gun_LMT M4_Single Shots_Designed_3P_05_10C4C929.wem"
        }
       ]
      },

@@ -53,6 +53,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_02" ID="{BBF0D9B6-D96F-4187-89BE-0623D665D828}" ShortID="307990115">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -76,6 +83,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_03" ID="{77D5F898-DE19-4A20-9E51-028C2058B740}" ShortID="69384605">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -99,6 +113,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_04" ID="{FCAFB76A-ACF7-42C2-AD18-B85CBE265633}" ShortID="613530144">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -122,6 +143,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_05" ID="{D73B45A0-F118-4566-92EB-E546FF8061A9}" ShortID="22078350">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -145,6 +173,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_06" ID="{80B6D653-D535-4F48-B947-9ACDC842CD6A}" ShortID="7866781">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -168,6 +203,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_07" ID="{C6400D41-3929-42B2-AD0B-282632FA7162}" ShortID="22472361">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -191,6 +233,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_08" ID="{4BA518E9-069C-48AA-89B8-7395C541136F}" ShortID="694838207">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -214,6 +263,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_09" ID="{2142735D-6CFE-45F4-98AD-6DD9597C51DF}" ShortID="186363288">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -237,6 +293,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_10" ID="{18B77749-3818-45CF-A256-A4CBC8492474}" ShortID="987858886">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
@@ -260,6 +323,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Gun_LMT M4_Single Shots_Designed_3P_11" ID="{3D7E0497-84FE-49F6-B312-D37D9B8FB330}" ShortID="228608693">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool">
+											<ValueList>
+												<Value>False</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>

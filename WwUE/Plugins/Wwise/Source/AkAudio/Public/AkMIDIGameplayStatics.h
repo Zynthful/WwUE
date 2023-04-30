@@ -24,6 +24,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|MIDI")
 	static int32 PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, UPARAM(ref) TArray<FMIDIEvent>& MIDIEvents, int32 PlayingID = 0, bool bAbsoluteOffsets = false);
 
+	UFUNCTION(BlueprintCallable, Category = "Audiokinetic|MIDI")
+	static bool StopMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, int32 PlayingID = 0);
+
 	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Audiokinetic|MIDI")
 	static int64 GetSampleTick();
 
