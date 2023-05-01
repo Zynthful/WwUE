@@ -40,6 +40,8 @@ AWwUECharacter::AWwUECharacter()
 	AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
 	AkComponent->SetupAttachment(GetRootComponent());
 
+	// Call OnFireIntervalChanged delegates
+	SetFireInterval(FireInterval);
 }
 
 void AWwUECharacter::BeginPlay()
@@ -64,6 +66,21 @@ void AWwUECharacter::SetHasRifle(bool bNewHasRifle)
 bool AWwUECharacter::GetHasRifle()
 {
 	return bHasRifle;
+}
+
+void AWwUECharacter::SetFireInterval(float NewInterval)
+{
+	FireInterval = FMath::Max(0.01f, NewInterval);
+	if (OnFireIntervalChangedSignature.IsBound())
+	{
+		OnFireIntervalChangedSignature.Broadcast(FireInterval);
+	}
+	OnFireIntervalChanged(FireInterval);
+}
+
+float AWwUECharacter::GetFireInterval()
+{
+	return FireInterval;
 }
 
 void AWwUECharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -207,7 +224,7 @@ void AWwUECharacter::PrepareAkMIDICallback()
 
 void AWwUECharacter::ReleaseAkMIDICallback()
 {
-	// Unbind fromm AkAudioDevice's MIDI callback (PreProcessMessageQueueForRender)
+	// Unbind from AkAudioDevice's MIDI callback (PreProcessMessageQueueForRender)
 	// So we stop queueing any additional gunfire audio
 	FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
 	if (AkAudioDevice == nullptr)
@@ -312,7 +329,8 @@ void AWwUECharacter::InitAkMIDIFireInterval()
 	double CurrentCallbackTimeMs = (double)CurrentCallbackCount * MsPerCallback;
 
 	// Calculate potential next shot time
-	// If the potential next shott happens sooner than our current expected next shot, use the potential instead
+	// If the potential next shot happens sooner than our current expected next shot, use the potential instead
+	// I think this is because if the fire rate changes mid-stream, we want to change the TimeUntilNextFireMs
 	double MaybeTimeUntilNextFireMs = CurrentCallbackTimeMs + FireIntervalMs;
 	if (MaybeTimeUntilNextFireMs < TimeUntilNextFireMs)
 	{

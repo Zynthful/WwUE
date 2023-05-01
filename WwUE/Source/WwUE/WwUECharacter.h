@@ -8,6 +8,8 @@
 
 DECLARE_LOG_CATEGORY_EXTERN(LogCharacter, Log, All);
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFireIntervalChangedSignature, float, NewFireInterval)
+
 class UInputComponent;
 class UInputAction;
 class UInputMappingContext;
@@ -63,6 +65,12 @@ public:
 	/** Getter for the bool */
 	UFUNCTION(BlueprintCallable, Category = Weapon)
 	bool GetHasRifle();
+
+	UFUNCTION(BlueprintCallable, Category = "Weapon|Firing")
+	void SetFireInterval(float NewInterval);
+
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Weapon|Firing")
+	float GetFireInterval();
 
 protected:
 
@@ -175,6 +183,11 @@ protected:
 	/* End MIDI -------------------------------------------------------------- */
 
 	uint32 NumShotsFiredThisStream;
+
+public:
+
+	UPROPERTY(BlueprintAssignable, Category = "Weapon|Firing")
+	FOnFireIntervalChangedSignature OnFireIntervalChangedSignature;
 
 
 };
