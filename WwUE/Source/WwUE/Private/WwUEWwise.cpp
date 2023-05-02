@@ -47,6 +47,11 @@ AkPlayingID UWwUEWwise::Play(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, 
 	return AkComponent->PostAkEvent(AkEvent, 0, NullCallback, TEXT(""));
 }
 
+void UWwUEWwise::Stop(AkPlayingID& PlayingID, float TransitionTime, EAkCurveInterpolation FadeCurve)
+{
+	UAkGameplayStatics::ExecuteActionOnPlayingID(AkActionOnEventType::Stop, PlayingID, TransitionTime, FadeCurve);
+}
+
 AkPlayingID UWwUEWwise::PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, FMIDIEvent MIDIEvent, AkPlayingID PlayingID, bool bAbsoluteOffsets)
 {
 	TArray<FMIDIEvent> MIDIEvents;

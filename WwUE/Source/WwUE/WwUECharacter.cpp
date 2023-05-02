@@ -75,7 +75,7 @@ void AWwUECharacter::SetFireInterval(float NewInterval)
 	{
 		OnFireIntervalChangedSignature.Broadcast(FireInterval);
 	}
-	OnFireIntervalChanged(FireInterval);
+	InitAkMIDIFireInterval();
 }
 
 float AWwUECharacter::GetFireInterval()
@@ -150,11 +150,7 @@ void AWwUECharacter::StartFiring(const FInputActionValue& Value)
 	bIsFiring = true;
 	NumShotsFiredThisStream = 0;
 
-	FireSingle();
-
-	FTimerDelegate TD_FireInterval;
-	TD_FireInterval.BindUFunction(this, GET_FUNCTION_NAME_CHECKED(AWwUECharacter, FireSingle));
-	GetWorldTimerManager().SetTimer(TH_FireInterval, TD_FireInterval, FireInterval, true);
+	OnFireIntervalFinished();
 
 	PrepareAkMIDICallback();
 }
@@ -170,7 +166,7 @@ void AWwUECharacter::StopFiring(const FInputActionValue& Value)
 
 	if (GEngine)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("STOP FIRING, Num = %d"), NumShotsFiredThisStream));
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("STOP FIRING, NumShots = %d, NumPosts = %d"), NumShotsFiredThisStream, PostCounter));
 	}
 
 	bIsFiring = false;
@@ -184,6 +180,15 @@ void AWwUECharacter::StopFiring(const FInputActionValue& Value)
 	ReleaseAkMIDICallback();
 
 	NumShotsFiredThisStream = 0;
+}
+
+void AWwUECharacter::OnFireIntervalFinished()
+{
+	FireSingle();
+
+	FTimerDelegate TD_FireInterval;
+	TD_FireInterval.BindUFunction(this, GET_FUNCTION_NAME_CHECKED(AWwUECharacter, OnFireIntervalFinished));
+	GetWorldTimerManager().SetTimer(TH_FireInterval, TD_FireInterval, FireInterval, false);
 }
 
 void AWwUECharacter::FireSingle()
@@ -215,9 +220,10 @@ void AWwUECharacter::PrepareAkMIDICallback()
 	SamplesPerCallback = AudioSettings.uNumSamplesPerFrame;
 	PostLengthSamples = FMath::Max(PostLengthSamples, SamplesPerCallback);
 	CurrentCallbackCount = 0;
-	MsPerCallback = ((double)AudioSettings.uNumSamplesPerFrame / (double)AudioSettings.uNumSamplesPerSecond) * 1000;
-	TimeUntilNextFireMs = 0;
+	CallbackInterval = ((double)AudioSettings.uNumSamplesPerFrame / (double)AudioSettings.uNumSamplesPerSecond);
+	TimeUntilNextFire = 0;
 	bReleaseMIDICallback = false;
+	PostCounter = 0;
 
 	InitAkMIDIFireInterval();
 }
@@ -245,31 +251,34 @@ void AWwUECharacter::ReleaseAkMIDICallback()
 		AkAudioDevice->OnMessageWaitToSend.Unbind();
 	}
 
+	FiringPlayingID = AK_INVALID_PLAYING_ID;
+
+	//UWwUEWwise::Stop(FiringPlayingID);
 	//UAkMIDIGameplayStatics::StopMIDIOnEvent(FireSingleAkEvent, AkComponent, FiringPlayingID);
 }
 
 void AWwUECharacter::AkMIDICallback(AkAudioSettings* AudioSettings)
 {
-	if (GEngine)
+	if (GEngine && bPrintAkMIDICallbacks)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("AkMIDICallback")));
 	}
 
 	// Calculate current frame and next frame times
-	double CurrentCallbackTimeMs = (double)CurrentCallbackCount * MsPerCallback;
-	double NextCallbackTimeMs = CurrentCallbackTimeMs + MsPerCallback;
+	double CurrentCallbackTime = (double)CurrentCallbackCount * CallbackInterval;
+	double NextCallbackTime = CurrentCallbackTime + CallbackInterval;
 
 	// Failsafe!
-	if (CurrentCallbackTimeMs > TimeUntilNextFireMs)
+	if (CurrentCallbackTime > TimeUntilNextFire)
 	{
-		TimeUntilNextFireMs = CurrentCallbackTimeMs;
+		TimeUntilNextFire = CurrentCallbackTime;
 	}
 
 	// Must we post this frame?
-	if (TimeUntilNextFireMs >= CurrentCallbackTimeMs && TimeUntilNextFireMs <= NextCallbackTimeMs)
+	if (TimeUntilNextFire >= CurrentCallbackTime && TimeUntilNextFire <= NextCallbackTime)
 	{
-		// Calculate sample offset, relative to current frame, to post MIDI eventss
-		double SampleOffsetPercent = (TimeUntilNextFireMs - CurrentCallbackTimeMs) / MsPerCallback;
+		// Calculate sample offset, relative to current frame, to post MIDI events
+		double SampleOffsetPercent = (TimeUntilNextFire - CurrentCallbackTime) / CallbackInterval;
 		uint32 SampleOffset = (uint32)(SampleOffsetPercent * SamplesPerCallback);
 
 		TArray<FMIDIEvent> MIDIEvents;
@@ -306,7 +315,7 @@ void AWwUECharacter::AkMIDICallback(AkAudioSettings* AudioSettings)
 		}
 
 		// Update post time in context
-		TimeUntilNextFireMs += (FireInterval * 1000);
+		TimeUntilNextFire += FireInterval;
 	}
 
 	// Update counter
@@ -318,26 +327,20 @@ void AWwUECharacter::AkMIDICallback(AkAudioSettings* AudioSettings)
 	}
 }
 
-void AWwUECharacter::OnFireIntervalChanged(float Value)
-{
-	InitAkMIDIFireInterval();
-}
-
 void AWwUECharacter::InitAkMIDIFireInterval()
 {
-	double FireIntervalMs = FireInterval * 1000;
-	double CurrentCallbackTimeMs = (double)CurrentCallbackCount * MsPerCallback;
+	double CurrentCallbackTime = (double)CurrentCallbackCount * CallbackInterval;
 
 	// Calculate potential next shot time
 	// If the potential next shot happens sooner than our current expected next shot, use the potential instead
-	// I think this is because if the fire rate changes mid-stream, we want to change the TimeUntilNextFireMs
-	double MaybeTimeUntilNextFireMs = CurrentCallbackTimeMs + FireIntervalMs;
-	if (MaybeTimeUntilNextFireMs < TimeUntilNextFireMs)
+	// I think this is because if the fire rate changes mid-stream, we want to change the TimeUntilNextFire
+	double MaybeTimeUntilNextFire = CurrentCallbackTime + FireInterval;
+	if (MaybeTimeUntilNextFire < TimeUntilNextFire)
 	{
-		TimeUntilNextFireMs = MaybeTimeUntilNextFireMs;
+		TimeUntilNextFire = MaybeTimeUntilNextFire;
 	}
 
-	double PostLengthMs = FMath::Min(MsPerCallback, FireIntervalMs);
-	PostLengthSamples = (uint32)((PostLengthMs / MsPerCallback) * SamplesPerCallback);
+	double PostLength = FMath::Min(CallbackInterval, FireInterval);
+	PostLengthSamples = (uint32)((PostLength / CallbackInterval) * SamplesPerCallback);
 	PostLengthSamples = FMath::Min(PostLengthSamples, SamplesPerCallback);
 }

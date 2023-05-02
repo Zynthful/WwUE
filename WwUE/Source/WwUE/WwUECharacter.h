@@ -81,6 +81,9 @@ protected:
 	void StopFiring(const FInputActionValue& Value);
 
 	UFUNCTION()
+	void OnFireIntervalFinished();
+
+	UFUNCTION()
 	void FireSingle();
 
 	/* Bind to MIDI callback so we can start queueing gunfire audio ahead of time, plus calculating the necessary variables */
@@ -93,8 +96,6 @@ protected:
 	 * This is used to trigger the gunfire audio at the exact sample (at x% through a buffer/audio frame) to ensure sample accuracy
 	*/
 	void AkMIDICallback(AkAudioSettings* AudioSettings);
-
-	void OnFireIntervalChanged(float Value);
 
 	void InitAkMIDIFireInterval();
 
@@ -150,9 +151,8 @@ protected:
 
 	/* MIDI ------------------------------------------------------------------- */
 
-	/* Pool of MIDI events that can be posted on the next callback */
-	UPROPERTY()
-	TArray<FMIDIEvent> MIDIEventPool;
+	/* Whether to log the AkMIDICallbacks to the screen */
+	uint8 bPrintAkMIDICallbacks : 1;
 
 	/* Number of times we've called PostMIDIOnEvent in the current stream of shots */
 	uint32 PostCounter;
@@ -166,14 +166,11 @@ protected:
 	/* How many callbacks have happened so far */
 	uint32 CurrentCallbackCount;
 
-	/* Time between callbacks in milliseconds*/
-	double MsPerCallback;
+	/* Time between callbacks in seconds*/
+	double CallbackInterval;
 
-	/* Time between shots in milliseconds*/
-	//double FireIntervalMs;
-
-	/* Time until the next shot in milliseconds*/
-	double TimeUntilNextFireMs;
+	/* Time until the next shot in seconds*/
+	double TimeUntilNextFire;
 
 	/* Whether to release the MIDI callback on finishing AkMIDICallback */
 	uint8 bReleaseMIDICallback : 1;

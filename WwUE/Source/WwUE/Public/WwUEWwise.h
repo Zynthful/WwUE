@@ -29,6 +29,8 @@ public:
 
 	static AkPlayingID Play(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, bool bStopWhenAttachedToDestroyed = false);
 
+	static void Stop(AkPlayingID& PlayingID, float TransitionTime = 0.f, EAkCurveInterpolation FadeCurve = EAkCurveInterpolation::Linear);
+
 	static AkPlayingID PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, FMIDIEvent MIDIEvent, AkPlayingID PlayingID = 0, bool bAbsoluteOffsets = false);
 
 	static AkPlayingID PostMIDIOnEvent(UAkAudioEvent* AkEvent, UAkComponent* AkComponent, TArray<FMIDIEvent>& MIDIEvents, AkPlayingID PlayingID = 0, bool bAbsoluteOffsets = false);
