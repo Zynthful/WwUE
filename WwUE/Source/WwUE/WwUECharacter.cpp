@@ -75,7 +75,6 @@ void AWwUECharacter::SetFireInterval(float NewInterval)
 	{
 		OnFireIntervalChangedSignature.Broadcast(FireInterval);
 	}
-	InitAkMIDIFireInterval();
 }
 
 float AWwUECharacter::GetFireInterval()
@@ -151,8 +150,6 @@ void AWwUECharacter::StartFiring(const FInputActionValue& Value)
 	NumShotsFiredThisStream = 0;
 
 	OnFireIntervalFinished();
-
-	PrepareAkMIDICallback();
 }
 
 void AWwUECharacter::StopFiring(const FInputActionValue& Value)
@@ -176,8 +173,6 @@ void AWwUECharacter::StopFiring(const FInputActionValue& Value)
 	{
 		WorldTimerManager.ClearTimer(TH_FireInterval);
 	}
-
-	ReleaseAkMIDICallback();
 
 	NumShotsFiredThisStream = 0;
 }
@@ -203,144 +198,15 @@ void AWwUECharacter::FireSingle()
 	NumShotsFiredThisStream++;
 }
 
-void AWwUECharacter::PrepareAkMIDICallback()
+void AWwUECharacter::AddInventoryItem(AWwUEProjectileWeapon* InventoryItem)
 {
-	// Bind to AkAudioDevice's MIDI callback (PreProcessMessageQueueForRender)
-	// So we start queueing gunfire audio from that callback
-	FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
-	if (AkAudioDevice == nullptr)
-	{
-		UE_LOG(LogCharacter, Error, TEXT("PrepareAkMIDICallback failed! | Failed to get AkAudioDevice"));
-		return;
-	}
-	AkAudioDevice->OnMessageWaitToSend.BindUObject(this, &AWwUECharacter::AkMIDICallback);
 
-	AkAudioSettings AudioSettings = UAkMIDIGameplayStatics::GetAudioSettings();
-
-	SamplesPerCallback = AudioSettings.uNumSamplesPerFrame;
-	PostLengthSamples = FMath::Max(PostLengthSamples, SamplesPerCallback);
-	CurrentCallbackCount = 0;
-	CallbackInterval = ((double)AudioSettings.uNumSamplesPerFrame / (double)AudioSettings.uNumSamplesPerSecond);
-	TimeUntilNextFire = 0;
-	bReleaseMIDICallback = false;
-	PostCounter = 0;
-
-	InitAkMIDIFireInterval();
 }
 
-void AWwUECharacter::ReleaseAkMIDICallback()
+void AWwUECharacter::RemoveInventoryItem(AWwUEProjectileWeapon* InventoryItem)
 {
-	// Unbind from AkAudioDevice's MIDI callback (PreProcessMessageQueueForRender)
-	// So we stop queueing any additional gunfire audio
-	FAkAudioDevice* AkAudioDevice = FAkAudioDevice::Get();
-	if (AkAudioDevice == nullptr)
-	{
-		UE_LOG(LogCharacter, Error, TEXT("ReleaseAkMIDICallback failed! | Failed to get AkAudioDevice"));
-		return;
-	}
-
-	// Ensure we live at least one callback
-	// (so if we release too early, we still hear a fire sound)
-	if (CurrentCallbackCount <= 0)
-	{
-		// Handle releasing callback on callback finished
-		bReleaseMIDICallback = true;
-	}
-	else
-	{
-		AkAudioDevice->OnMessageWaitToSend.Unbind();
-	}
-
-	FiringPlayingID = AK_INVALID_PLAYING_ID;
-
-	//UWwUEWwise::Stop(FiringPlayingID);
-	//UAkMIDIGameplayStatics::StopMIDIOnEvent(FireSingleAkEvent, AkComponent, FiringPlayingID);
 }
 
-void AWwUECharacter::AkMIDICallback(AkAudioSettings* AudioSettings)
+void AWwUECharacter::ClearInventory()
 {
-	if (GEngine && bPrintAkMIDICallbacks)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("AkMIDICallback")));
-	}
-
-	// Calculate current frame and next frame times
-	double CurrentCallbackTime = (double)CurrentCallbackCount * CallbackInterval;
-	double NextCallbackTime = CurrentCallbackTime + CallbackInterval;
-
-	// Failsafe!
-	if (CurrentCallbackTime > TimeUntilNextFire)
-	{
-		TimeUntilNextFire = CurrentCallbackTime;
-	}
-
-	// Must we post this frame?
-	if (TimeUntilNextFire >= CurrentCallbackTime && TimeUntilNextFire <= NextCallbackTime)
-	{
-		// Calculate sample offset, relative to current frame, to post MIDI events
-		double SampleOffsetPercent = (TimeUntilNextFire - CurrentCallbackTime) / CallbackInterval;
-		uint32 SampleOffset = (uint32)(SampleOffsetPercent * SamplesPerCallback);
-
-		TArray<FMIDIEvent> MIDIEvents;
-
-		FMIDIEvent NoteOnMIDIEvent;
-		NoteOnMIDIEvent.NoteType = EMIDINoteType::NoteOn;
-		NoteOnMIDIEvent.Channel = 0;
-		NoteOnMIDIEvent.OffsetSamples = SampleOffset;
-		NoteOnMIDIEvent.ParamOne = 60;
-		NoteOnMIDIEvent.ParamTwo = 96;
-
-		FMIDIEvent NoteOffMIDIEvent;
-		NoteOffMIDIEvent.NoteType = EMIDINoteType::NoteOff;
-		NoteOffMIDIEvent.Channel = 0;
-		NoteOffMIDIEvent.OffsetSamples = SampleOffset + PostLengthSamples;
-		NoteOffMIDIEvent.ParamOne = 60;
-		NoteOffMIDIEvent.ParamTwo = 0;
-
-		MIDIEvents.Emplace(NoteOnMIDIEvent);
-		MIDIEvents.Emplace(NoteOffMIDIEvent);
-
-		if (FiringPlayingID != AK_INVALID_PLAYING_ID)
-		{
-			UAkMIDIGameplayStatics::StopMIDIOnEvent(FireSingleAkEvent, AkComponent, FiringPlayingID);
-		}
-
-		// Post MIDI events
-		FiringPlayingID = UWwUEWwise::PostMIDIOnEvent(FireSingleAkEvent, AkComponent, MIDIEvents, FiringPlayingID);
-		++PostCounter;
-
-		if (GEngine)
-		{
-			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Cyan, FString::Printf(TEXT("Posting MIDI events, PostCounter = %d, PlayingID = %d, NoteOnSampleOffset = %d, NoteOffSampleOffset = %d"), PostCounter, FiringPlayingID, SampleOffset, SampleOffset + PostLengthSamples));
-		}
-
-		// Update post time in context
-		TimeUntilNextFire += FireInterval;
-	}
-
-	// Update counter
-	++CurrentCallbackCount;
-
-	if (bReleaseMIDICallback)
-	{
-		ReleaseAkMIDICallback();
-	}
-}
-
-void AWwUECharacter::InitAkMIDIFireInterval()
-{
-	double CurrentCallbackTime = (double)CurrentCallbackCount * CallbackInterval;
-
-	// Calculate potential next shot time
-	// If the potential next shot happens sooner than our current expected next shot, use the potential instead
-	// I think this is because if the fire rate changes mid-stream, we want to change the TimeUntilNextFire
-	double MaybeTimeUntilNextFire = CurrentCallbackTime + FireInterval;
-	if (MaybeTimeUntilNextFire < TimeUntilNextFire)
-	{
-		TimeUntilNextFire = MaybeTimeUntilNextFire;
-	}
-
-	double PostLength = FMath::Min(CallbackInterval, FireInterval);
-	PostLengthSamples = (uint32)((PostLength / CallbackInterval) * SamplesPerCallback);
-	PostLengthSamples = FMath::Min(PostLengthSamples, SamplesPerCallback);
 }

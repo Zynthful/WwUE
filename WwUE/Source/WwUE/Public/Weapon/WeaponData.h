@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "WeaponTypes.h"
 #include "WeaponData.generated.h"
 
 class UAkAudioEvent;
@@ -18,9 +19,12 @@ class WWUE_API UWeaponData : public UDataAsset
 	
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sound")
-	UAkAudioEvent* StartFiringSound;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Firing")
+	float FireInterval = 0.1f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Firing")
+	EWeaponFireMode FireMode = EWeaponFireMode::Single;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Sound")
-	UAkAudioEvent* StopFiringSound;
+	UAkAudioEvent* FireSingleAkEvent;
 };

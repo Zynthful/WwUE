@@ -8,7 +8,7 @@
 
 DECLARE_LOG_CATEGORY_EXTERN(LogCharacter, Log, All);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFireIntervalChangedSignature, float, NewFireInterval)
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFireIntervalChangedSignature, float, NewFireInterval);
 
 class UInputComponent;
 class UInputAction;
@@ -21,6 +21,7 @@ class USoundBase;
 class UWeaponData;
 class UAkComponent;
 class UAkAudioEvent;
+class AWwUEProjectileWeapon;
 
 namespace AK
 {
@@ -86,18 +87,20 @@ protected:
 	UFUNCTION()
 	void FireSingle();
 
-	/* Bind to MIDI callback so we can start queueing gunfire audio ahead of time, plus calculating the necessary variables */
-	void PrepareAkMIDICallback();
+	/* ------ Inventory --------------------------------------------------------------------------------- */
 
-	/* Unbind from MIDI callback so we stop playing gunfire audio, plus resetting the necessary variables */
-	void ReleaseAkMIDICallback();
+public:
 
-	/* MIDI callback from Wwise which is executed every buffer/audio frame 
-	 * This is used to trigger the gunfire audio at the exact sample (at x% through a buffer/audio frame) to ensure sample accuracy
-	*/
-	void AkMIDICallback(AkAudioSettings* AudioSettings);
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+	void AddInventoryItem(AWwUEProjectileWeapon* InventoryItem);
 
-	void InitAkMIDIFireInterval();
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+	void RemoveInventoryItem(AWwUEProjectileWeapon* InventoryItem);
+
+	UFUNCTION(BlueprintCallable, Category = "Inventory")
+	void ClearInventory();
+
+	/* ------ End Inventory --------------------------------------------------------------------------------- */
 
 private:
 	/** Pawn mesh: 1st person view (arms; seen only by self) */
@@ -175,7 +178,7 @@ protected:
 	/* Whether to release the MIDI callback on finishing AkMIDICallback */
 	uint8 bReleaseMIDICallback : 1;
 
-	uint32 FiringPlayingID;
+	uint32 FirePlayingID;
 
 	/* End MIDI -------------------------------------------------------------- */
 
@@ -186,6 +189,8 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Weapon|Firing")
 	FOnFireIntervalChangedSignature OnFireIntervalChangedSignature;
 
-
+protected:
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	AWwUEProjectileWeapon* CurrentWeapon;
 };
 
