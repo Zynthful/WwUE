@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{281D5963-C509-4B21-B027-59E60EB1E8E0}" SchemaVersion="103" RootDocumentID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}" ParentDocumentID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}">
+	<Events>
+		<WorkUnit Name="VO_Cinematics" ID="{281D5963-C509-4B21-B027-59E60EB1E8E0}" OwnerID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}" PersistMode="Nested">
+			<ChildrenList>
+				<Event Name="Play_vo_cine_2D" ID="{BDCC0995-CA15-4C1B-AA29-A80324211550}">
+					<ChildrenList>
+						<Action Name="" ID="{C10868DA-9E98-4B65-BDC4-85C9281DA0E7}" ShortID="401578803">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="vo_cine_2D" ID="{E6F61367-77C5-4CBE-99CF-8E2A5B652F4E}" WorkUnitID="{2619DE93-0F7F-498C-8E98-8F29BF2B4456}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_vo_cine_3D" ID="{927AD2F9-EEE3-49F4-A4D0-1FFD40F05F7A}">
+					<ChildrenList>
+						<Action Name="" ID="{6D226559-8E1F-466C-B666-A63E2F918FD1}" ShortID="459165706">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="vo_cine_3D" ID="{80125091-9820-40AA-AA31-9E34AA7AC61D}" WorkUnitID="{2619DE93-0F7F-498C-8E98-8F29BF2B4456}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

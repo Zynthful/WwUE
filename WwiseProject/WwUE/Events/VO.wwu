@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}" SchemaVersion="103">
+	<Events>
+		<WorkUnit Name="VO" ID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}" PersistMode="Standalone">
+			<ChildrenList>
+				<WorkUnit Name="VO_Cinematics" ID="{281D5963-C509-4B21-B027-59E60EB1E8E0}" PersistMode="Reference"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
