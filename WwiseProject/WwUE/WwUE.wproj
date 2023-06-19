@@ -15,12 +15,12 @@
 				<Property Name="Color" Type="int16" Value="13"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
-						<Value Platform="Windows"></Value>
+						<Value Platform="Windows">E:\Projects\WwUE\WwiseProject\WwUE\External Sources\ExternalSources.wsources</Value>
 					</ValueList>
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
+						<Value Platform="Windows">E:\Projects\WwUE\WwUE\Content\Sound\Wwise\SoundBanks\Windows\ExternalSources\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="GlobalVoiceInstancesLimit" Type="int16">

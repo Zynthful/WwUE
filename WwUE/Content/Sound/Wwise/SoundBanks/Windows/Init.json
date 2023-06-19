@@ -8,8 +8,8 @@
    "ProjectRoot": "E:\\Projects\\WwUE\\WwiseProject\\WwUE\\",
    "SourceFilesRoot": "E:\\Projects\\WwUE\\WwiseProject\\WwUE\\.cache\\Windows\\",
    "SoundBanksRoot": "E:\\Projects\\WwUE\\WwUE\\Content\\Sound\\Wwise\\SoundBanks\\Windows\\",
-   "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "E:\\Projects\\WwUE\\WwiseProject\\WwUE\\GeneratedSoundBanks\\Windows"
+   "ExternalSourcesInputFile": "E:\\Projects\\WwUE\\WwiseProject\\WwUE\\External Sources\\ExternalSources.wsources",
+   "ExternalSourcesOutputRoot": "E:\\Projects\\WwUE\\WwUE\\Content\\Sound\\Wwise\\SoundBanks\\Windows\\ExternalSources"
   },
   "SoundBanks": [
    {

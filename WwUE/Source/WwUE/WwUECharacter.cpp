@@ -11,14 +11,12 @@
 #include "AkAudioEvent.h"
 #include "AkComponent.h"
 //#include "AkAudioDevice.h"
+#include "Weapon/WwUEProjectileWeapon.h"
 
 DEFINE_LOG_CATEGORY(LogCharacter);
 
 AWwUECharacter::AWwUECharacter()
-{
-	// Character doesnt have a rifle at start
-	bHasRifle = false;
-	
+{	
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
 		
@@ -39,9 +37,6 @@ AWwUECharacter::AWwUECharacter()
 
 	AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
 	AkComponent->SetupAttachment(GetRootComponent());
-
-	// Call OnFireIntervalChanged delegates
-	SetFireInterval(FireInterval);
 }
 
 void AWwUECharacter::BeginPlay()
@@ -58,50 +53,18 @@ void AWwUECharacter::BeginPlay()
 	}
 }
 
-void AWwUECharacter::SetHasRifle(bool bNewHasRifle)
-{
-	bHasRifle = bNewHasRifle;
-}
-
-bool AWwUECharacter::GetHasRifle()
-{
-	return bHasRifle;
-}
-
-void AWwUECharacter::SetFireInterval(float NewInterval)
-{
-	FireInterval = FMath::Max(0.01f, NewInterval);
-	if (OnFireIntervalChangedSignature.IsBound())
-	{
-		OnFireIntervalChangedSignature.Broadcast(FireInterval);
-	}
-}
-
-float AWwUECharacter::GetFireInterval()
-{
-	return FireInterval;
-}
-
 void AWwUECharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
-	// Set up action bindings
 	UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent);
 	if (!ensure(EnhancedInputComponent))
 	{
-		UE_LOG(LogCharacter, Error, TEXT("SetupPlayerInputComponent failed | EnhancedInputComponent = nullptr"));
+		UE_LOG(LogCharacter, Error, TEXT("AWwUECharacter::SetupPlayerInputComponent failed | EnhancedInputComponent was nullptr"));
 	}
 
-	// Jumping
 	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &ACharacter::Jump);
 	EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
-
-	// Moving
 	EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AWwUECharacter::Move);
-
-	// Looking
 	EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AWwUECharacter::Look);
-
-	// Firing
 	EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Triggered, this, &AWwUECharacter::StartFiring);
 	EnhancedInputComponent->BindAction(FireAction, ETriggerEvent::Completed, this, &AWwUECharacter::StopFiring);
 }
@@ -134,73 +97,27 @@ void AWwUECharacter::Look(const FInputActionValue& Value)
 
 void AWwUECharacter::StartFiring(const FInputActionValue& Value)
 {
-	if (bIsFiring)
+	if (CurrentWeapon != nullptr)
 	{
-		return;
+		CurrentWeapon->StartFiring();
 	}
-
-	UE_LOG(LogCharacter, Verbose, TEXT("StartFiring = %s"), *GetName());
-
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("START FIRING")));
-	}
-
-	bIsFiring = true;
-	NumShotsFiredThisStream = 0;
-
-	OnFireIntervalFinished();
 }
 
 void AWwUECharacter::StopFiring(const FInputActionValue& Value)
 {
-	if (!bIsFiring)
+	if (CurrentWeapon != nullptr)
 	{
-		return;
+		CurrentWeapon->StopFiring();
 	}
-
-	UE_LOG(LogCharacter, Verbose, TEXT("StopFiring = %s"), *GetName());
-
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("STOP FIRING, NumShots = %d, NumPosts = %d"), NumShotsFiredThisStream, PostCounter));
-	}
-
-	bIsFiring = false;
-
-	FTimerManager& WorldTimerManager = GetWorldTimerManager();
-	if (ensure(WorldTimerManager.IsTimerActive(TH_FireInterval)))
-	{
-		WorldTimerManager.ClearTimer(TH_FireInterval);
-	}
-
-	NumShotsFiredThisStream = 0;
-}
-
-void AWwUECharacter::OnFireIntervalFinished()
-{
-	FireSingle();
-
-	FTimerDelegate TD_FireInterval;
-	TD_FireInterval.BindUFunction(this, GET_FUNCTION_NAME_CHECKED(AWwUECharacter, OnFireIntervalFinished));
-	GetWorldTimerManager().SetTimer(TH_FireInterval, TD_FireInterval, FireInterval, false);
-}
-
-void AWwUECharacter::FireSingle()
-{
-	UE_LOG(LogCharacter, Verbose, TEXT("FireSingle = %s"), *GetName());
-
-	if (GEngine)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Orange, FString::Printf(TEXT("(GAME) FireSingle")));
-	}
-
-	NumShotsFiredThisStream++;
 }
 
 void AWwUECharacter::AddInventoryItem(AWwUEProjectileWeapon* InventoryItem)
 {
+	// this is obviously dumb but this is temp so
+	ClearInventory();
+	CurrentWeapon = InventoryItem;
 
+	OnAddInventoryItemSignature.Broadcast(InventoryItem);
 }
 
 void AWwUECharacter::RemoveInventoryItem(AWwUEProjectileWeapon* InventoryItem)
@@ -209,4 +126,5 @@ void AWwUECharacter::RemoveInventoryItem(AWwUEProjectileWeapon* InventoryItem)
 
 void AWwUECharacter::ClearInventory()
 {
+	CurrentWeapon = nullptr;
 }

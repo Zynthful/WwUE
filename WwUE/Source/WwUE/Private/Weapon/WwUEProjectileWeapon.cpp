@@ -20,8 +20,11 @@ AWwUEProjectileWeapon::AWwUEProjectileWeapon()
 		InternalFireInterval = WeaponData->FireInterval;
 	}
 
+	StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
+	StaticMeshComponent->SetupAttachment(RootComponent);
+
 	AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
-	AkComponent->SetupAttachment(RootComponent);
+	AkComponent->SetupAttachment(StaticMeshComponent);
 }
 
 void AWwUEProjectileWeapon::BeginPlay()
@@ -38,6 +41,20 @@ void AWwUEProjectileWeapon::Tick(float DeltaTime)
 
 void AWwUEProjectileWeapon::StartFiring()
 {
+	if (bFiring)
+	{
+		return;
+	}
+
+	UE_LOG(LogWeapon, Verbose, TEXT("StartFiring = %s"), *GetName());
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("START FIRING")));
+	}
+
+	bFiring = true;
+	NumShotsFiredThisStream = 0;
+
 	if (WeaponData->FireMode == EWeaponFireMode::Automatic)
 	{
 		bRefiring = true;
@@ -64,6 +81,19 @@ void AWwUEProjectileWeapon::StartFiring()
 
 void AWwUEProjectileWeapon::StopFiring()
 {
+	if (!bFiring)
+	{
+		return;
+	}
+
+	UE_LOG(LogWeapon, Verbose, TEXT("StopFiring = %s"), *GetName());
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Purple, FString::Printf(TEXT("STOP FIRING, NumShots = %d, NumPosts = %d"), NumShotsFiredThisStream, PostCounter));
+	}
+
+	bFiring = false;
+
 	if (WeaponData->FireMode == EWeaponFireMode::Automatic)
 	{
 		bRefiring = false;
@@ -80,6 +110,14 @@ void AWwUEProjectileWeapon::StopFiring()
 
 void AWwUEProjectileWeapon::FireSingle()
 {
+	UE_LOG(LogWeapon, Verbose, TEXT("FireSingle = %s"), *GetName());
+	if (GEngine)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Orange, FString::Printf(TEXT("(GAME) FireSingle")));
+	}
+
+	NumShotsFiredThisStream++;
+
 	if (bRefiring)
 	{
 		FTimerDelegate TD_Fire;
@@ -106,8 +144,14 @@ void AWwUEProjectileWeapon::SetFireInterval(float NewFireInterval)
 	OnFireIntervalChanged(OldFireInterval, InternalFireInterval);
 }
 
+float AWwUEProjectileWeapon::GetFireInterval()
+{
+	return InternalFireInterval;
+}
+
 void AWwUEProjectileWeapon::OnFireIntervalChanged(float OldFireInterval, float NewFireInterval)
 {
+	OnFireIntervalChangedSignature.Broadcast(NewFireInterval);
 	InitAkMIDIFireInterval();
 }
 

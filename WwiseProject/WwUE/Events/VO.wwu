@@ -4,6 +4,17 @@
 		<WorkUnit Name="VO" ID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}" PersistMode="Standalone">
 			<ChildrenList>
 				<WorkUnit Name="VO_Cinematics" ID="{281D5963-C509-4B21-B027-59E60EB1E8E0}" PersistMode="Reference"/>
+				<Event Name="Play_vo_default" ID="{E87162D1-7329-454E-9D70-CF35B89011DC}">
+					<ChildrenList>
+						<Action Name="" ID="{9640D5E8-1697-4EEE-9DF7-5ED407136FA9}" ShortID="480375376">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="vo_default" ID="{D1FDF3B7-A411-4D11-8FB7-A5F716B83F19}" WorkUnitID="{E9F66A25-81EF-4D99-A67B-C625CA3108EE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

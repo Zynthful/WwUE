@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2121267529	Play_vo_default			\VO\Play_vo_default	
+	3024841414	Play_vo_cine_2D			\VO\VO_Cinematics\Play_vo_cine_2D	
+	3041619025	Play_vo_cine_3D			\VO\VO_Cinematics\Play_vo_cine_3D	
+
+External Source	ID	Name			Wwise Object Path	Notes
+	618371124	External_Source			\VO\vo_main\vo_default\External_Source	
+

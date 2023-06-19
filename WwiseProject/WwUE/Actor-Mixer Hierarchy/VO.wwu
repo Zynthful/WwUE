@@ -2,6 +2,10 @@
 <WwiseDocument Type="WorkUnit" ID="{E9F66A25-81EF-4D99-A67B-C625CA3108EE}" SchemaVersion="103">
 	<AudioObjects>
 		<WorkUnit Name="VO" ID="{E9F66A25-81EF-4D99-A67B-C625CA3108EE}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="3"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
 			<ChildrenList>
 				<ActorMixer Name="vo_main" ID="{BE459699-371F-4623-9574-3B3C9866FD04}" ShortID="272052163">
 					<ReferenceList>
@@ -9,11 +13,30 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+							<ObjectRef Name="Voice" ID="{BBA84B8E-4620-4C6B-8337-354F315609A8}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<WorkUnit Name="VO_Cinematics" ID="{2619DE93-0F7F-498C-8E98-8F29BF2B4456}" PersistMode="Reference"/>
+						<Sound Name="vo_default" ID="{D1FDF3B7-A411-4D11-8FB7-A5F716B83F19}" ShortID="423991950">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{68F3CD54-97B0-403F-8971-C2A47A267367}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{FBCE913B-8E18-48B2-B1E8-CD3F0D6CFDC8}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<ExternalSource Name="External_Source" ID="{20B8803B-6F19-4D39-8803-C4BA4902FC58}">
+									<Language>SFX</Language>
+								</ExternalSource>
+							</ChildrenList>
+							<ObjectLists/>
+							<ActiveSourceList>
+								<ActiveSource Name="External_Source" ID="{20B8803B-6F19-4D39-8803-C4BA4902FC58}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<ObjectLists/>
 				</ActorMixer>

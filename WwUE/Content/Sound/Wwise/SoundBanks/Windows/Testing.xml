@@ -4,8 +4,8 @@
 		<ProjectRoot>E:\Projects\WwUE\WwiseProject\WwUE\</ProjectRoot>
 		<SourceFilesRoot>E:\Projects\WwUE\WwiseProject\WwUE\.cache\Windows\</SourceFilesRoot>
 		<SoundBanksRoot>E:\Projects\WwUE\WwUE\Content\Sound\Wwise\SoundBanks\Windows\</SoundBanksRoot>
-		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>E:\Projects\WwUE\WwiseProject\WwUE\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesInputFile>E:\Projects\WwUE\WwiseProject\WwUE\External Sources\ExternalSources.wsources</ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\Projects\WwUE\WwUE\Content\Sound\Wwise\SoundBanks\Windows\ExternalSources</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
 		<SoundBank Id="1512859615" GUID="{0D23AA39-3A2F-4306-883A-DD9104822DCC}" Language="SFX" Hash="2524626722">

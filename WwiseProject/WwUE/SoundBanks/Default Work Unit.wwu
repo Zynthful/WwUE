@@ -12,6 +12,7 @@
 				</SoundBank>
 				<WorkUnit Name="Environment" ID="{135ACBE5-EA15-4B41-947D-283BABE23253}" PersistMode="Reference"/>
 				<WorkUnit Name="SFX" ID="{FD662984-E7D6-495F-8C83-A9AA228C6916}" PersistMode="Reference"/>
+				<WorkUnit Name="Voice" ID="{C79922AB-B78F-44DF-80A2-6D635AB16E1B}" PersistMode="Reference"/>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundBanks>

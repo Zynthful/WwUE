@@ -8,8 +8,6 @@
 
 DECLARE_LOG_CATEGORY_EXTERN(LogCharacter, Log, All);
 
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnFireIntervalChangedSignature, float, NewFireInterval);
-
 class UInputComponent;
 class UInputAction;
 class UInputMappingContext;
@@ -22,6 +20,8 @@ class UWeaponData;
 class UAkComponent;
 class UAkAudioEvent;
 class AWwUEProjectileWeapon;
+
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnAddInventoryItemSignature, AWwUEProjectileWeapon*, InventoryItem);
 
 namespace AK
 {
@@ -59,20 +59,6 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
-	/** Setter to set the bool */
-	UFUNCTION(BlueprintCallable, Category = Weapon)
-	void SetHasRifle(bool bNewHasRifle);
-
-	/** Getter for the bool */
-	UFUNCTION(BlueprintCallable, Category = Weapon)
-	bool GetHasRifle();
-
-	UFUNCTION(BlueprintCallable, Category = "Weapon|Firing")
-	void SetFireInterval(float NewInterval);
-
-	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Weapon|Firing")
-	float GetFireInterval();
-
 protected:
 
 	UFUNCTION(BlueprintCallable)
@@ -80,12 +66,6 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	void StopFiring(const FInputActionValue& Value);
-
-	UFUNCTION()
-	void OnFireIntervalFinished();
-
-	UFUNCTION()
-	void FireSingle();
 
 	/* ------ Inventory --------------------------------------------------------------------------------- */
 
@@ -133,64 +113,14 @@ private:
 
 
 protected:
-	UPROPERTY(EditDefaultsOnly, Category = "WwUECharacter|Weapon", meta = (ClampMin = 0.01f))
-	float FireInterval = 0.2f;
-
-	UPROPERTY(Transient)
-	uint8 bIsFiring : 1;
-
-	/** Bool for AnimBP to switch to another animation set */
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "WwUECharacter|Weapon")
-	bool bHasRifle;
-
-	UPROPERTY(Transient)
-	FTimerHandle TH_FireInterval;
-
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "WwUECharacter|Sound")
 	UAkComponent* AkComponent;
 
-	UPROPERTY(EditDefaultsOnly, Category = "WwUECharacter|Sound")
-	UAkAudioEvent* FireSingleAkEvent;
-
-	/* MIDI ------------------------------------------------------------------- */
-
-	/* Whether to log the AkMIDICallbacks to the screen */
-	uint8 bPrintAkMIDICallbacks : 1;
-
-	/* Number of times we've called PostMIDIOnEvent in the current stream of shots */
-	uint32 PostCounter;
-
-	/* Length of the MIDI events to post in samples*/
-	uint32 PostLengthSamples;
-
-	/* Number of samples per callback */
-	uint32 SamplesPerCallback;
-
-	/* How many callbacks have happened so far */
-	uint32 CurrentCallbackCount;
-
-	/* Time between callbacks in seconds*/
-	double CallbackInterval;
-
-	/* Time until the next shot in seconds*/
-	double TimeUntilNextFire;
-
-	/* Whether to release the MIDI callback on finishing AkMIDICallback */
-	uint8 bReleaseMIDICallback : 1;
-
-	uint32 FirePlayingID;
-
-	/* End MIDI -------------------------------------------------------------- */
-
-	uint32 NumShotsFiredThisStream;
-
-public:
-
-	UPROPERTY(BlueprintAssignable, Category = "Weapon|Firing")
-	FOnFireIntervalChangedSignature OnFireIntervalChangedSignature;
-
-protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
 	AWwUEProjectileWeapon* CurrentWeapon;
+
+public:
+	UPROPERTY(BlueprintAssignable, Category = "Firing")
+	FOnAddInventoryItemSignature OnAddInventoryItemSignature;
 };
 

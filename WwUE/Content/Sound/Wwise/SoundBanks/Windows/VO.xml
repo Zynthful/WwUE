@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>E:\Projects\WwUE\WwiseProject\WwUE\</ProjectRoot>
+		<SourceFilesRoot>E:\Projects\WwUE\WwiseProject\WwUE\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>E:\Projects\WwUE\WwUE\Content\Sound\Wwise\SoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile>E:\Projects\WwUE\WwiseProject\WwUE\External Sources\ExternalSources.wsources</ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\Projects\WwUE\WwUE\Content\Sound\Wwise\SoundBanks\Windows\ExternalSources</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<SoundBanks>
+		<SoundBank Id="1534528548" GUID="{78725A35-DA46-4413-95C2-ED59B34E0868}" Language="SFX" Hash="3141649003">
+			<ObjectPath>\SoundBanks\Default Work Unit\Voice\VO</ObjectPath>
+			<ShortName>VO</ShortName>
+			<Path>VO.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3024841414" Name="Play_vo_cine_2D" ObjectPath="\Events\VO\VO_Cinematics\Play_vo_cine_2D" GUID="{BDCC0995-CA15-4C1B-AA29-A80324211550}" DurationType="Unknown"/>
+				<Event Id="3041619025" Name="Play_vo_cine_3D" ObjectPath="\Events\VO\VO_Cinematics\Play_vo_cine_3D" GUID="{927AD2F9-EEE3-49F4-A4D0-1FFD40F05F7A}" DurationType="Unknown"/>
+				<Event Id="2121267529" Name="Play_vo_default" ObjectPath="\Events\VO\Play_vo_default" GUID="{E87162D1-7329-454E-9D70-CF35B89011DC}" DurationType="Unknown"/>
+			</IncludedEvents>
+			<ExternalSources>
+				<Source Id="618371124" Name="External_Source" ObjectPath="\Actor-Mixer Hierarchy\VO\vo_main\VO_Cinematics\vo_cine_main\vo_cine_2D\External_Source" GUID="{F57DAEEA-AEF0-47B9-BC78-DBFA26E47B95}"/>
+				<Source Id="618371124" Name="External_Source" ObjectPath="\Actor-Mixer Hierarchy\VO\vo_main\VO_Cinematics\vo_cine_main\vo_cine_3D\External_Source" GUID="{45EB271A-83BF-46F6-9A5E-A37D2FEDB201}"/>
+				<Source Id="618371124" Name="External_Source" ObjectPath="\Actor-Mixer Hierarchy\VO\vo_main\vo_default\External_Source" GUID="{20B8803B-6F19-4D39-8803-C4BA4902FC58}"/>
+			</ExternalSources>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

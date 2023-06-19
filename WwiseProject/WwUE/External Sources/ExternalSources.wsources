@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalSourcesList SchemaVersion="1" Root="E:\Projects\WwUE\WwiseProject\WwUE\External Sources">
+    <Source Path="TEST_01.wav" Conversion="VO" />
+    <Source Path="TEST_02.wav" Conversion="VO" />
+    <Source Path="TEST_03.wav" Conversion="VO" />
+    <Source Path="TEST_04.wav" Conversion="VO" />
+    <Source Path="TEST_05.wav" Conversion="VO" />
+</ExternalSourcesList>

@@ -120,7 +120,8 @@ FAkExternalSourceInfo UWwUEVOSystem::MakeAkExternalSourceInfo(const FVODataTable
 	ExternalSourceInfo.IsStreamed = false;
 
 	ExternalSourceInfo.ExternalSrcName = Row->ExternalSourceCookie;
-	ExternalSourceInfo.FileName = Row->ExternalSourceFileName;
+	// TODO: Move path to somewhere else
+	ExternalSourceInfo.FileName = FString("ExternalSources/").Append(Row->ExternalSourceFileName).Append(".wem");
 	ExternalSourceInfo.ExternalSourceAsset = nullptr;
 
 	return ExternalSourceInfo;

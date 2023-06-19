@@ -17,6 +17,9 @@ namespace AK
         static const AkUniqueID PLAY_AMB_BEDS_GEN_RAIN_MODERATE_LOOP = 871266710U;
         static const AkUniqueID PLAY_TEST_BEEP_LONG = 2866913994U;
         static const AkUniqueID PLAY_TEST_BEEP_SHORT = 2232761158U;
+        static const AkUniqueID PLAY_VO_CINE_2D = 3024841414U;
+        static const AkUniqueID PLAY_VO_CINE_3D = 3041619025U;
+        static const AkUniqueID PLAY_VO_DEFAULT = 2121267529U;
         static const AkUniqueID PLAY_WPN_LMTM4_FIRE_AUTO = 4032663141U;
         static const AkUniqueID PLAY_WPN_LMTM4_FIRE_SINGLE = 4065970732U;
         static const AkUniqueID PLAY_WPN_LMTM4_FIRE_TAIL = 4075792862U;
@@ -30,6 +33,7 @@ namespace AK
         static const AkUniqueID ENVIRONMENT_AMBIENCE_BEDS_00_GENERIC = 2167721767U;
         static const AkUniqueID SFXWEAPONSLMTM4 = 3645460479U;
         static const AkUniqueID TESTING = 1512859615U;
+        static const AkUniqueID VO = 1534528548U;
     } // namespace BANKS
 
     namespace BUSSES
@@ -58,6 +62,11 @@ namespace AK
         static const AkUniqueID NO_OUTPUT = 2317455096U;
         static const AkUniqueID SYSTEM = 3859886410U;
     } // namespace AUDIO_DEVICES
+
+    namespace EXTERNAL_SOURCES
+    {
+        static const AkUniqueID EXTERNAL_SOURCE = 618371124U;
+    } // namespace EXTERNAL_SOURCES
 
 }// namespace AK
 

@@ -4,11 +4,11 @@
 		<ProjectRoot>E:\Projects\WwUE\WwiseProject\WwUE\</ProjectRoot>
 		<SourceFilesRoot>E:\Projects\WwUE\WwiseProject\WwUE\.cache\Windows\</SourceFilesRoot>
 		<SoundBanksRoot>E:\Projects\WwUE\WwUE\Content\Sound\Wwise\SoundBanks\Windows\</SoundBanksRoot>
-		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>E:\Projects\WwUE\WwiseProject\WwUE\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesInputFile>E:\Projects\WwUE\WwiseProject\WwUE\External Sources\ExternalSources.wsources</ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>E:\Projects\WwUE\WwUE\Content\Sound\Wwise\SoundBanks\Windows\ExternalSources</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<SoundBanks>
-		<SoundBank Id="3645460479" GUID="{AF60BC58-8B45-4EE1-B35A-51305672B003}" Language="SFX" Hash="2503718400">
+		<SoundBank Id="3645460479" GUID="{AF60BC58-8B45-4EE1-B35A-51305672B003}" Language="SFX" Hash="2880338944">
 			<ObjectPath>\SoundBanks\Default Work Unit\SFX\SFX_Weapons\SFX_Weapons_LMTM4\SFXWeaponsLMTM4</ObjectPath>
 			<ShortName>SFXWeaponsLMTM4</ShortName>
 			<Path>SFXWeaponsLMTM4.bnk</Path>

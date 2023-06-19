@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C79922AB-B78F-44DF-80A2-6D635AB16E1B}" SchemaVersion="103" RootDocumentID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}" ParentDocumentID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}">
+	<SoundBanks>
+		<WorkUnit Name="Voice" ID="{C79922AB-B78F-44DF-80A2-6D635AB16E1B}" OwnerID="{64423493-84E9-4A3F-BED8-BDC5C859D4E0}" PersistMode="Nested">
+			<ChildrenList>
+				<SoundBank Name="VO" ID="{78725A35-DA46-4413-95C2-ED59B34E0868}">
+					<ObjectInclusionList>
+						<ObjectRef Name="VO" ID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}" WorkUnitID="{9D6E9477-2A90-4210-9BBC-3EF4544B3746}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>
